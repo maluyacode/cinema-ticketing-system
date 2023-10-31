@@ -1,4 +1,8 @@
-const express = require('express');
-const app = express.Router();
+const dotenv = require('dotenv')
+dotenv.config({path:'./config/.env'})
 
-const mongodb = require('mongodb')
+const app = require('./app')
+
+app.listen(process.env.PORT, function () {
+    console.log('server started')
+})
