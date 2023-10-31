@@ -35,3 +35,25 @@ exports.register = async (req, res, next) => {
 
     sendToken(user, 200, res);
 }
+
+exports.login = async (req, res, next) => {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({ error: 'Please enter email & password' })
+    }
+
+    const user = await User.findOne({ email }).select('+password'); // get user including password
+
+    if (!user) {
+        return res.status(400).json({ message: 'Invalid Email or Password' });
+    }
+
+    const passwordMatched = await user.comparePassword(password); // check if the password is matched to the user account
+
+    if (!passwordMatched) {
+        return res.status(401).json({ message: 'Invalid Email or Password' })
+    }
+    const userWithoutPass = await User.findOne({ email })
+    sendToken(userWithoutPass, 200, res)
+}
