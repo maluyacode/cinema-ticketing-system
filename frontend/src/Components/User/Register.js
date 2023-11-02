@@ -1,74 +1,63 @@
 import React from "react";
-import "./Register.css";
+import './Register.css'
+import { styled } from '@mui/material/styles';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import {
+    TextField,
+    Button,
+    Avatar,
+} from '@mui/material'
+
+const VisuallyHiddenInput = styled('input')({
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: 1,
+    overflow: 'hidden',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    whiteSpace: 'nowrap',
+    width: 1,
+});
 
 const Register = () => {
     return (
-        <div className="index">
-            <div className="wireframe">
-                <div className="overlap">
-                    <img
-                        className="vector"
-                        alt="Vector"
-                        src="https://cdn.animaapp.com/projects/6541d4698ff9150ad275896f/releases/6541da40d5437067629b8ebf/img/vector.svg"
-                    />
-                    <img
-                        className="img"
-                        alt="Vector"
-                        src="https://cdn.animaapp.com/projects/6541d4698ff9150ad275896f/releases/6541d4b3677c0dd718b69060/img/vector-1.svg"
-                    />
-                    <img
-                        className="vector-2"
-                        alt="Vector"
-                        src="https://cdn.animaapp.com/projects/6541d4698ff9150ad275896f/releases/6541da40d5437067629b8ebf/img/vector-2.svg"
-                    />
-                    <div className="frame">
-                        <div className="text-wrapper">Create Account</div>
-                        <div className="overlap-group">
-                            <div className="input-frame" />
-                            <div className="div-wrapper">
-                                <div className="div">First Name</div>
-                            </div>
-                        </div>
-                        <div className="overlap-2">
-                            <div className="frame-2" />
-                            <div className="div-wrapper">
-                                <div className="div">Email</div>
-                            </div>
-                        </div>
-                        <div className="overlap-group-2">
-                            <div className="frame-3" />
-                            <div className="frame-4">
-                                <div className="div">Last Name</div>
-                            </div>
-                        </div>
-                        <div className="frame-5">
-                            <div className="text-wrapper-2">Create Account</div>
-                        </div>
-                        <div className="overlap-3">
-                            <div className="frame-6">
-                                <div className="text-wrapper-3">Already have an account?</div>
-                            </div>
-                            <div className="text-wrapper-4">Login</div>
-                        </div>
+        <div className="register-container">
+            <div className="inner-container">
+                <div className="message-container">
+                    <h2>Explore the world <br /> of Blockbusters</h2>
+                    <div className="image">
+                        <img src="https://cdn.animaapp.com/projects/6541d4698ff9150ad275896f/releases/6541da40d5437067629b8ebf/img/untitled-design-1.png" />
                     </div>
-                    <div className="frame-7" />
-                    <div className="frame-8">
-                        <div className="div">Password</div>
+                </div>
+                <div className="create-container">
+                    <div className="form-container">
+                        <h3> Create Account </h3>
+                        <form>
+                            <div className="form-inline">
+                                <TextField label="First Name" variant="outlined" size="small" />
+                                <TextField label="Last Name" variant="outlined" size="small" />
+                            </div>
+                            <div className="form-single">
+                                <TextField label="Email" variant="outlined" className="input-form" size="small" />
+                            </div>
+                            <div className="form-single">
+                                <TextField label="Password" variant="outlined" className="input-form" size="small" />
+                            </div>
+                            <div className="form-single profile">
+                                <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" style={{ marginRight: "5px" }} />
+                                {/* <p className="label-profile">Choose your profile</p> */}
+                                <Button component="label" variant="contained" className="upload-button" startIcon={<CloudUploadIcon />}>
+                                    Upload Photo
+                                    <VisuallyHiddenInput type="file" />
+                                </Button>
+                            </div>
+                            <Button variant="contained" style={{ backgroundColor: "#527272" }} className="register-button">Create Account</Button>
+                            <div className="text-wrapper-3">Already have an account?
+                                <a href="#" className="login-button" > Login</a>
+                            </div>
+                        </form>
                     </div>
-                    <img
-                        className="untitled-design"
-                        alt="Untitled design"
-                        src="https://cdn.animaapp.com/projects/6541d4698ff9150ad275896f/releases/6541da40d5437067629b8ebf/img/untitled-design-1.png"
-                    />
-                    <img
-                        className="vector-3"
-                        alt="Vector"
-                        src="https://cdn.animaapp.com/projects/6541d4698ff9150ad275896f/releases/6541d4b3677c0dd718b69060/img/vector-3.svg"
-                    />
-                    <p className="explore-the-world-of">
-                        Explore the world <br />
-                        of Blockbusters
-                    </p>
                 </div>
             </div>
         </div>
