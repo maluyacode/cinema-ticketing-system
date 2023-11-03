@@ -2,7 +2,7 @@
 
 .register-container {
       background-color: #2a4d4e;
-      height: 100%;
+      height: inherit;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,9 +22,10 @@
 .message-container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       padding: 2rem;
+      flex-wrap: wrap;
 }
 
 h2 {
@@ -34,7 +35,7 @@ h2 {
       font-weight: 600;
       line-height: normal;
       margin-left: 10px;
-    width: 240px;
+      width: 230px;
 }
 
 .image {
@@ -42,12 +43,7 @@ h2 {
 }
 
 img {
-      width: 450px;
-      position: absolute;
-      top: 150px;
-      left: 290px;
-      height: 500px;
-      object-fit: cover;
+      width: 250px;
 }
 
 .create-container {
@@ -57,101 +53,46 @@ img {
       border-radius: 2rem;
       display: flex;
       justify-content: center;
+      max-height: fit-content;
+      align-items: center;
 }
 
 .form-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       width: 65%;
 }
 
-form {
-      display: flex;
-      flex-direction: column;
-      margin-top: 40px;
+@media screen and (max-width: 1281px) {
+      .inner-container {
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            height: fit-content;
+      }
+
+      img {
+            width: 100px;
+            object-fit: cover;
+      }
+
+      .message-container {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+      }
+
+      .create-container {
+            width: 100%;
+            height: fit-content;
+            padding-top: 20px;
+            padding-bottom: 20px;
+      }
 }
 
-.form-inline {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-}
-
-.inline-input {
-    /* width: 100%; */
-}
-
-.form-single {
-      margin-top: 15px;
-}
-
-.input-form {
-      width: 100%;
-}
-
-h3 {
-      color: #1e1e1e;
-      font-family: "Inter", Helvetica;
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: 0;
-      line-height: normal;
-}
-
-.register-button {
-      margin-top: 15px !important;
-      color: #ffffff;
-      font-family: "Syne", Helvetica !important;
-      font-size: 1.3rem !important;
-      font-weight: 200 !important;
-      letter-spacing: 0 !important;
-      line-height: normal !important;
-      height: 45px;
-      text-transform: capitalize !important;
-}
-
-.text-wrapper-3 {
-      margin-top: 15px;
-      color: #5e6262;
-      font-family: "Inter", Helvetica;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0;
-      line-height: normal;
-}
-
-.login-button {
-      color: #1d484b;
-      text-decoration: none;
-}
-
-.profile {
-      display: flex;
-      justify-content: flex-start;
-}
-
-.label-profile {
-      font-family: "Syne", Helvetica !important;
-      font-weight: 100;
-      font-size: 1.2rem;
-      color: #5e6262;
-      text-align: center;
-      display: table-cell;
-      vertical-align: middle;
-      line-height: 14px;
-      padding: 12px 0;
-}
-
-.upload-button {
-      text-transform: capitalize !important;
-      margin-left: 10px !important;
-      background-color: #70a0a1 !important;
-}
-
-
-@media screen and (max-width: 1210px) {
+/* @media screen and (max-width: 810px) {
     h3 {
         font-size: 1.5rem;
 
@@ -161,44 +102,11 @@ h3 {
         width: 90%;
     }
 
-      img {
+    img {
         display: none;
     }
 
     .message-container {
         width: 100%;
     }
-
-    h2 {
-        width: 100%;
-        text-align: center;
-    }
-
-    .inline-input {
-        width: 100%;
-    }
-
-    .form-inline .inline-input:nth-child(1) {
-        margin-bottom: 20px;
-    }
-
-    .create-container {
-        width: 100%;
-    }
-
-    .form-container {
-        width: 80%;
-    }
-
-    form {
-        margin-top: 10px;
-    }
-}
-
-@media screen and (max-width: 811px) {
-    img {
-        height: 280px;
-            position: static;
-        object-fit: cover
-      }
-}
+} */
