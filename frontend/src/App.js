@@ -1,11 +1,19 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import './App.css';
 import Register from './Components/User/Register'
+import Login from './Components/User/Login'
 
 function App() {
   return (
+
     <div className="App">
-      <Register/>
+      <Router>
+        <Routes>
+          <Route path='/login' element={<Login />} caseSensitive={true} />
+          <Route path='/register' element={<Register />} caseSensitive={true} />
+        </Routes>
+      </Router>
     </div>
   );
 }
