@@ -1,5 +1,5 @@
 import React from "react";
-import './Register.css'
+import './Login-Register.css'
 import { styled } from '@mui/material/styles';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
