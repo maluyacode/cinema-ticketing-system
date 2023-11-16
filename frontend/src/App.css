@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Syne:wght@600&display=swap');
+
 body {
   width: 100vw;
   overflow-x: hidden;
@@ -6,8 +8,44 @@ body {
 
 * {
   margin: 0;
+  font-family: Montserrat !important;
+  scroll-behavior: smooth;
 }
 
 .App {
   height: 100vh;
+  /* background-color: #2a4d4ee7; */
+}
+
+.content {
+  padding-top: 100.500px;
+  padding-bottom: 68.500px;
+}
+
+
+#imageContainer {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.image {
+  display: inline-block;
+  margin-right: 20px;
+  /* Adjust the spacing between images */
+  animation: scroll 200s linear infinite;
+  /* Adjust the speed of scrolling */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }

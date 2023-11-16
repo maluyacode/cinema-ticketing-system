@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap');
 
 .register-container {
-      background-color: #2a4d4e;
+      background-color: #2a4d4ee7;
       height: inherit;
       display: flex;
       justify-content: center;
@@ -10,13 +10,14 @@
 
 .inner-container {
       width: 70%;
-      height: 85%;
+      height: 80%;
       background-color: #70a0a1;
       border-radius: 2rem;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: wrap;
+      margin-top: 70px;
 }
 
 .message-container {
@@ -69,7 +70,7 @@ img {
       .inner-container {
             align-items: center;
             justify-content: center;
-            width: 50%;
+            width: 70%;
             height: fit-content;
       }
 
@@ -88,25 +89,24 @@ img {
             width: 100%;
             height: fit-content;
             padding-top: 20px;
-            padding-bottom: 20px;
+            padding-bottom: 50px;
       }
 }
 
-/* @media screen and (max-width: 810px) {
-    h3 {
-        font-size: 1.5rem;
+@media screen and (max-width: 810px) {
+      h2 {
+            font-size: 1rem;
+      }
 
-    }
+      .inner-container {
+            width: 85%;
+      }
 
-    .inner-container {
-        width: 90%;
-    }
+      .register-container {
+            height: fit-content !important;
+      }
 
-    img {
-        display: none;
-    }
-
-    .message-container {
-        width: 100%;
-    }
-} */
+      img {
+            width: 70px;
+      }
+}
