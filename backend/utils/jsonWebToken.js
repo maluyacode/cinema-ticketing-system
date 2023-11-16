@@ -1,4 +1,5 @@
 const sendToken = (user, statuscode, res) => {
+    
     const token = user.getJwtToken();
     const options = {
         expires: new Date(

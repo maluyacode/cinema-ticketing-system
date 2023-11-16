@@ -4,12 +4,10 @@ const app = require('./app');
 const cloudinary = require('cloudinary');
 
 const dotenv = require('dotenv');
-dotenv.config({ path: './config/.env' });
+dotenv.config({ path: './config/production.env' });
 const port = process.env.PORT || 8080;
 
 connectDatabase();
-
-
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,

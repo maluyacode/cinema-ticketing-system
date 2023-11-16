@@ -1,105 +1,91 @@
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { Link as LinkRouter } from 'react-router-dom'
+import { LoginForm } from './LoginForm';
+import { useState } from "react";
+import axios from "axios";
+import { authenticate } from 'utils/helpers'
+import './Login-Register.css'
+import { useNavigate } from 'react-router-dom'
+import BlockbusterMessage from "./Childs/BlockbusterMessage";
+import Toast from "Components/Layout/Toast"
+import {
+    Box,
+    Typography,
+    Container
+} from "@mui/material"
 
 export default function Login() {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get("email"),
-            password: data.get("password"),
-        });
+    const navigate = useNavigate();
+
+    const [formInputs, setFormInputs] = useState({
+        email: '',
+        password: ''
+    })
+
+    const { email, password } = formInputs
+
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = e => {
+        setFormInputs({ ...formInputs, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        setLoading(true)
+        login(email, password);
     };
 
+    const login = async (email, password) => {
+        try {
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+
+            const { data } = await axios
+                .post(`${process.env.REACT_APP_API}/api/v1/login`, { email, password }, config)
+
+            Toast.success("Login Successfully")
+
+            setTimeout(() => {
+                setLoading(false)
+                authenticate(data, () => navigate("/"))
+                window.location.reload()
+            }, 1500)
+
+        } catch ({ response }) {
+            setLoading(false)
+            Toast.error(response.data.message);
+        }
+    }
+
     return (
-        <div className="register-container">
-            <div className="inner-container">
-                <div className="message-container">
-                    <h2>Explore the world  of Blockbusters</h2>
-                    <div className="image">
-                        <img src="./images/tape.png" />
+        <>
+            <div className="register-container">
+                <div className="inner-container">
+                    <BlockbusterMessage />
+                    <div className="create-container">
+                        <Container component="main" maxWidth="xs">
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                }}
+                            >
+                                <Typography component="h1" variant="h5">
+                                    Sign in
+                                </Typography>
+                                <LoginForm
+                                    handleSubmit={handleSubmit}
+                                    handleChange={handleChange}
+                                    loading={loading} />
+                            </Box>
+                        </Container>
                     </div>
                 </div>
-                <div className="create-container">
-                    <Container component="main" maxWidth="xs">
-                        <Box
-                            sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                            }}
-                        >
-                            <Typography component="h1" variant="h5">
-                                Sign in
-                            </Typography>
-                            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="email"
-                                    label="Email Address"
-                                    name="email"
-                                    autoComplete="email"
-                                    autoFocus
-                                />
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    name="password"
-                                    label="Password"
-                                    type="password"
-                                    id="password"
-                                    autoComplete="current-password"
-                                />
-                                <FormControlLabel
-                                    control={<Checkbox value="remember" color="primary" />}
-                                    label="Remember me"
-                                />
-                                <Button
-                                    type="submit"
-                                    fullWidth
-                                    variant="contained"
-                                    sx={{ mt: 3, mb: 2, backgroundColor: '#70a0a1' }}
-                                >
-                                    Sign In
-                                </Button>
-                                <Grid container>
-                                    <Grid item xs>
-                                        <Link to="#" variant="body2"
-                                            sx={{
-                                                marginRight: "5px",
-                                                color: '#5e6262',
-                                                textDecoration: 'none'
-                                            }} >
-                                            Forgot password?
-                                        </Link>
-                                    </Grid>
-                                    <Grid item>
-                                        <Link to="/register" component={LinkRouter} variant="body2"
-                                            sx={{
-                                                color: '#5e6262',
-                                                textDecoration:
-                                                    'none'
-                                            }}>
-                                            Don't have an account? <b>Sign Up</b>
-                                        </Link>
-                                    </Grid>
-                                </Grid>
-                            </Box>
-                        </Box>
-                    </Container>
-                </div>
-            </div>
-        </div>
+            </div >
+        </>
     );
 }

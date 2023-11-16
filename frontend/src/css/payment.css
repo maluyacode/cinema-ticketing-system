@@ -1,0 +1,11 @@
+.payment-container {
+    max-width: 200px;
+    width: 150px;
+    height: 30px;
+}
+
+.payment-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

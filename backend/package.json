@@ -1,13 +1,14 @@
 {
-  "name": "cinema-ticketing-system-api",
+  "name": "movie-ticketing-system-api",
   "version": "1.0.0",
   "description": "School group project of 3rd BSIT students of TUP-T",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "prod" : "nodemon production.js"
   },
   "keywords": [],
-  "author": "NS-3A", 
+  "author": "NS-3A",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -22,8 +23,8 @@
     "mongodb": "^6.2.0",
     "mongoose": "^7.6.3",
     "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.7",
     "nodemon": "^3.0.1",
     "validator": "^13.11.0"
   }
-
 }
