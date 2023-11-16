@@ -19,7 +19,7 @@ const reservationSchema = new mongoose.Schema({
                 'Pending',
                 'Confirmed',
                 'Cancelled'
-            ]
+            ],
         }
     },
     user: {

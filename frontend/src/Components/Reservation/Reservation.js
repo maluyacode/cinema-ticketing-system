@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import Payment from './Payment';
 import SeatSelection from './SeatSelection';
 import Summary from './Summary';
+import { getToken } from 'utils/helpers';
 
 const Reservation = () => {
 
@@ -27,19 +28,44 @@ const Reservation = () => {
         console.log(data.show)
     }
 
+    const totalPrice =
+        (Number.parseInt(numOfTickets) * Number.parseInt(show.ticket_price))
+        +
+        (serviceFee * Number.parseInt(numOfTickets));
+
+    const reservation = {
+        show_id: show._id,
+        reserved_seats: selectedSeats,
+        number_of_tickets: numOfTickets,
+        payment_method: paymentMethod,
+        total_price: totalPrice,
+    }
+
+    const createReservation = async () => {
+        const config = {
+            headers: {
+                'Authorization': getToken()
+            }
+        }
+        const response = await axios.post(`${process.env.REACT_APP_API}/api/v1/reservation/create`, reservation, config);
+        console.log(response);
+    }
+
     useEffect(() => {
         getShow()
-    }, [])
+    }, [numOfTickets])
 
     return (
-        <Container className='content'>
+        <Container className='content' id="reservation-top">
             <ReservationHeader
+                key={pay}
                 setNumOfTickets={setNumOfTickets}
                 numOfTickets={numOfTickets}
                 show={show}
                 setSelectedSeats={setSelectedSeats}
                 selectedSeats={selectedSeats}
                 setProceedSummary={setProceedSummary}
+                totalPrice={totalPrice}
             />
             <SeatSelection
                 key={numOfTickets}
@@ -56,6 +82,7 @@ const Reservation = () => {
                 numOfTickets={numOfTickets}
                 selectedSeats={selectedSeats}
                 serviceFee={serviceFee}
+                totalPrice={totalPrice}
             /> : ""}
             {pay ? <Payment
                 setPaymentMethod={setPaymentMethod}
@@ -63,6 +90,13 @@ const Reservation = () => {
                 key={paymentMethod}
                 show={show}
                 numOfTickets={numOfTickets}
+
+                setPay={setPay}
+                setProceedSummary={setProceedSummary}
+                setNumOfTickets={setNumOfTickets}
+                setSelectedSeats={setSelectedSeats}
+                totalPrice={totalPrice}
+                createReservation={createReservation}
             /> : ""}
         </Container>
     )

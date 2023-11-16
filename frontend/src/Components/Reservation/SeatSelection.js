@@ -9,7 +9,7 @@ import Payment from './Payment';
 import { Button } from '@mui/material';
 import Toast from '../Layout/Toast'
 
-const SeatSelection = ({ setSelectedSeats, show, selectedSeats, numOfTickets, setProceedSummary }) => {
+const SeatSelection = ({ setSelectedSeats, setPay, show, selectedSeats, numOfTickets, setProceedSummary }) => {
 
     const handleClickSeats = (e) => {
 
@@ -41,6 +41,7 @@ const SeatSelection = ({ setSelectedSeats, show, selectedSeats, numOfTickets, se
             setProceedSummary(true)
         } else {
             setProceedSummary(false)
+            setPay(false)
         }
 
     }

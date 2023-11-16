@@ -1,0 +1,9 @@
+.typography-title {
+    font-size: small !important;
+    font-weight: 400 !important;
+}
+
+.typography-data {
+    font-size: medium !important;
+    font-weight: 500 !important;
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../../css/reservation-header.css'
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -8,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { Grid } from '@mui/material';
+
 
 const ReservationHeader = ({ setNumOfTickets, show, numOfTickets, setSelectedSeats, setProceedSummary }) => {
 
@@ -23,34 +25,34 @@ const ReservationHeader = ({ setNumOfTickets, show, numOfTickets, setSelectedSea
                 <CardContent>
                     <Box component='div' sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                         <div >
-                            <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                            <Typography color="text.secondary" className='typography-title'>
                                 Title
                             </Typography>
-                            <Typography variant="h6">
+                            <Typography className='typography-data'>
                                 {show.movie && show.movie.title}
                             </Typography>
                         </div>
-                        <div >
-                            <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                        <div>
+                            <Typography color="text.secondary" className='typography-title'>
                                 Date
                             </Typography>
-                            <Typography variant="h6">
+                            <Typography className='typography-data'>
                                 {new Date(show.start_time).toLocaleDateString('en-PH', { month: "short", day: "2-digit", year: 'numeric' })}
                             </Typography>
                         </div>
                         <div >
-                            <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                            <Typography color="text.secondary" className='typography-title'>
                                 Time
                             </Typography>
-                            <Typography variant="h6">
+                            <Typography className='typography-data'>
                                 {new Date(show.start_time).toLocaleTimeString('en-PH', { hour: "2-digit", minute: "2-digit" })}
                             </Typography>
                         </div>
                         <div>
-                            <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                            <Typography color="text.secondary" className='typography-title'>
                                 Cinema
                             </Typography>
-                            <Typography variant="h6">
+                            <Typography className='typography-data'>
                                 {show.cinema && show.cinema.name} - {show.cinema && show.cinema.location}
                             </Typography>
                         </div>
@@ -76,12 +78,12 @@ const ReservationHeader = ({ setNumOfTickets, show, numOfTickets, setSelectedSea
                             </TextField>
                         </Grid>
                         <Grid item={true} mr='20px' display='flex' alignItems='center'>
-                            <Typography variant="h6">
+                            <Typography className='typography-data'>
                                 ₱{show.ticket_price && show.ticket_price} each
                             </Typography>
                         </Grid>
                         <Grid item={true} display='flex' alignItems='center' ml='auto'>
-                            <Typography variant="h6">
+                            <Typography className='typography-data'>
                                 ₱{show.ticket_price && (Number.parseInt(show.ticket_price) * Number.parseInt(numOfTickets))}
                             </Typography>
                         </Grid>

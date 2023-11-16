@@ -1,4 +1,4 @@
-import { Card, Grid } from '@mui/material'
+import { Card, Grid, Divider } from '@mui/material'
 import React from 'react'
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,12 +8,9 @@ import Typography from '@mui/material/Typography';
 import '../../css/summary.css'
 import { Container } from 'react-bootstrap';
 
-const Summary = ({ setPay, show, numOfTickets, serviceFee, selectedSeats }) => {
+const Summary = ({ setPay, show, numOfTickets, serviceFee, selectedSeats, totalPrice }) => {
 
     const f = new Intl.ListFormat("en-us");
-    const ticketPrice = show && Number.parseInt(show.ticket_price);
-    const totalPrice = Number.parseInt(numOfTickets) * ticketPrice;
-    const subTotal = ticketPrice + (serviceFee * Number.parseInt(numOfTickets));
 
     const clickProceed = () => {
         setPay(true)
@@ -24,12 +21,13 @@ const Summary = ({ setPay, show, numOfTickets, serviceFee, selectedSeats }) => {
 
     return (
         <Container style={{ display: 'flex', justifyContent: 'center', marginTop: '150px', paddingBottom: '50px' }}>
-            <Card style={{ maxWidth: '600px', width: '450px' }}>
+            <Card style={{ maxWidth: '600px', width: '450px' }} className='summary-card'>
                 <CardContent>
-                    <Typography gutterBottom variant="h6" color='#1f2727' fontWeight={700} id='summary'>
-                        Payment Summary
+                    <Typography gutterBottom variant="h6" color='#2a4d4e' fontWeight={600} id='summary'>
+                        PAYMENT SUMMARY
                     </Typography>
-                    <Typography>
+                    <Divider />
+                    <Typography mt={1}>
                         {show && show.movie.title}
                     </Typography>
                     <Typography>
@@ -42,7 +40,7 @@ const Summary = ({ setPay, show, numOfTickets, serviceFee, selectedSeats }) => {
                         {show && new Date(show.start_time).toLocaleTimeString([], { hour: '2-digit', minute: "2-digit" })} Reserved Seating
                     </Typography>
 
-                    <Typography color='#1f2727' fontWeight={600}>
+                    <Typography color='#1f2727' fontWeight={600} mt={1}>
                         Tickets(s)
                     </Typography>
                     <Typography>
@@ -57,13 +55,13 @@ const Summary = ({ setPay, show, numOfTickets, serviceFee, selectedSeats }) => {
                     </Typography>
 
                     <Typography color='#1f2727' fontWeight={600} mt={3}>
-                        Total Price: {subTotal} php
+                        Total Price: {totalPrice} php
                     </Typography>
                     <Typography fontSize={25}>
                         {f.format(selectedSeats)}
                     </Typography>
                 </CardContent>
-                <CardActions className='payment-actions'>
+                <CardActions className='payment-actions' sx={{ marginBottom: '15px' }}>
                     <Button size='small' style={{ backgroundColor: '#2a4d4e' }} variant='contained' onClick={clickProceed}>Proceed to Payment</Button>
                 </CardActions>
             </Card>
