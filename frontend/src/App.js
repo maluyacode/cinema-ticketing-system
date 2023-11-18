@@ -11,12 +11,15 @@ import MovieShows from 'Components/Shows/MovieShows';
 import SeatSelection from 'Components/Reservation/SeatSelection';
 import Reservation from 'Components/Reservation/Reservation';
 import Success from 'Components/Reservation/Success';
+import Dashboard from 'Components/Admin/Dashboard';
+
+const hideHeader = window.location.pathname.startsWith('/admin');
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        {!hideHeader && <Header />}
         <Routes>
           <Route path='/login' element={<Login />} caseSensitive={true} />
           <Route path='/register' element={<Register />} caseSensitive={true} />
@@ -26,6 +29,9 @@ function App() {
           <Route path='/' element={<Home />} caseSensitive={true} />
           <Route path='/reservation/:showId' element={<Reservation />} caseSensitive={true} />
           <Route path='/success' element={<Success />} caseSensitive={true} />
+
+
+          <Route path='/admin/dashboard' element={<Dashboard />} />
         </Routes>
         <ToastContainer
           position="top-center"
