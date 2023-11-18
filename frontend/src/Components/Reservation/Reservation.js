@@ -9,6 +9,8 @@ import Payment from './Payment';
 import SeatSelection from './SeatSelection';
 import Summary from './Summary';
 import { getToken } from 'utils/helpers';
+import { useNavigate } from 'react-router-dom';
+import Toast from 'Components/Layout/Toast';
 
 const Reservation = () => {
 
@@ -19,6 +21,7 @@ const Reservation = () => {
     const [paymentMethod, setPaymentMethod] = useState('paypal');
     const [proceedSummary, setProceedSummary] = useState(false);
     const [pay, setPay] = useState(false);
+    const navigate = useNavigate()
 
     const serviceFee = 20;
 
@@ -41,14 +44,20 @@ const Reservation = () => {
         total_price: totalPrice,
     }
 
-    const createReservation = async () => {
+    const createReservation = async (e) => {
+        console.log("Asd")
+        e.target.setAttribute('disabled', 'true')
+        e.target.style.backgroundColor = 'rgb(178 176 176 / 90%)'
+        e.target.textContent = 'Processing';
+
         const config = {
             headers: {
                 'Authorization': getToken()
             }
         }
         const response = await axios.post(`${process.env.REACT_APP_API}/api/v1/reservation/create`, reservation, config);
-        console.log(response);
+        Toast.success('We reserved your seat(s)');
+        navigate('/success')
     }
 
     useEffect(() => {

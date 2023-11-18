@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<head>
+    <title>CinemaTick Reservation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Syne:wght@600&display=swap');
+
+        * {
+            font-family: Montserrat !important;
+            font-size: 16px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 97vh;
+        }
+
+        .container {
+            /* border: solid black 1px; */
+            height: 700px;
+            width: 500px;
+            position: relative;
+            background: #edecec;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            left: -0%;
+            top: 100%;
+            z-index: 10;
+            display: block;
+            height: 50px;
+            background-size: 50px 100%;
+            background-image: linear-gradient(135deg, #edecec 25%, transparent 25%), linear-gradient(225deg, #edecec 25%, transparent 25%);
+            background-position: 0 0;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            left: -0%;
+            top: -7%;
+            z-index: 10;
+            transform: rotate(180deg);
+            display: block;
+            height: 50px;
+            background-size: 50px 100%;
+            background-image: linear-gradient(135deg, #edecec 25%, transparent 25%), linear-gradient(225deg, #edecec 25%, transparent 25%);
+            background-position: 0 0;
+        }
+
+        h1 {
+            font-weight: 600;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+
+        .warning {
+            padding: 0 75px;
+            text-align: center;
+        }
+
+        img {
+            width: 150px;
+            margin: auto;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .reservation-id {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        hr {
+            border: dotted rgb(40, 39, 39) 1px;
+            height: 0;
+            margin-top: 30px;
+        }
+
+        .reservation-details {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            margin-top: 30px;
+        }
+
+        .movie-image {
+            width: 60px;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .movie-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .title div {
+            margin-left: 5px;
+        }
+
+        .head-detail {
+            margin-bottom: 2px;
+            font-weight: 600;
+            color: rgb(84, 84, 84);
+        }
+
+        span {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .detail {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .qr-small {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            margin-right: -4px;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .small-id {
+            transform: rotate(-90deg);
+            margin-top: 45px;
+            margin-right: -15px;
+            font-weight: 500;
+            color: rgb(84, 84, 84);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CinemaTick Reciept</h1>
+        <div class="message">We serve you best!</div>
+        <p class="warning">Please don't share this QR Code you may need it before you enter the cinema</p>
+        <div class="image-container">
+            <img src="{{ pic }}" alt="">
+        </div>
+        <div class="reservation-id">HAS89SHA9GO</div>
+        <hr />
+        <div class="reservation-details">
+            <div class="left">
+                <div class="title">
+                    <img class="movie-image" src="{{ pic }}" alt="">
+                    <div>
+                        <div class="movie-title">Avengers</div>
+                        <div class="cinema">Bed Cinema - Upper Bicutan</div>
+                    </div>
+                </div>
+                <span></span>
+                <div class="head-detail">Name</div>
+                <div class="detail name">Dave Merc Adlawan</div>
+
+                <div class="head-detail">Total Price</div>
+                <div class="detail name">P300</div>
+
+                <div class="head-detail">Reserved Seats</div>
+                <div class="detail name">A1, A2, A3</div>
+            </div>
+            <div class="right">
+                <div class="small-id">HAS89SHA9GO</div>
+                <img class="qr-small" src="{{ pic }}" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

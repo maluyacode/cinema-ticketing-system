@@ -1,7 +1,21 @@
 const Reservation = require('../models/Reservation');
 const crypto = require('crypto');
 const Show = require('../models/Show');
+const sendEmail = require('../utils/sendEmail');
+const pdfGenerate = require('../utils/pdfGenerate')
+const qrGenerate = require('../utils/qrGenerate');
+
+
 exports.create = async (req, res, next) => {
+
+    // await qrGenerate(req.user);
+    // await pdfGenerate();
+
+    // return res.send('email sent')
+    // await sendEmail({
+    //     email: req.user.email,
+    //     subject: `${process.env.APP_NAME}`
+    // })
 
     const {
         reserved_seats,

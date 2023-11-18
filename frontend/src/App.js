@@ -10,6 +10,7 @@ import ForgotPassword from 'Components/User/ForgotPassword';
 import MovieShows from 'Components/Shows/MovieShows';
 import SeatSelection from 'Components/Reservation/SeatSelection';
 import Reservation from 'Components/Reservation/Reservation';
+import Success from 'Components/Reservation/Success';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/movie/shows/:id' element={<MovieShows />} exact="true" />
           <Route path='/' element={<Home />} caseSensitive={true} />
           <Route path='/reservation/:showId' element={<Reservation />} caseSensitive={true} />
+          <Route path='/success' element={<Success />} caseSensitive={true} />
         </Routes>
         <ToastContainer
           position="top-center"
