@@ -2,40 +2,139 @@ const Movie = require('../models/Movie');
 const cloudinary = require('cloudinary');
 const ImageCloudinary = require('../utils/ImageCloudinary');
 
+exports.listAllMovies = async (req, res, next) => {
+    const movies = await Movie.find();
+    return res.status(200).json({
+        sucess: true,
+        movies
+    })
+}
+
 exports.create = async (req, res, next) => {
 
-    const {
-        title,
-        description,
-        release_date,
-        genre,
-        duration,
-        mtrcb_rating,
-        language,
-        director,
-        cast
-    } = req.body;
+    try {
+        const {
+            title,
+            description,
+            release_date,
+            genre,
+            duration,
+            mtrcb_rating,
+            language,
+            director,
+            cast
+        } = req.body;
 
-    const images = await ImageCloudinary.uploadMultiple(req.files, 'movie-ticketing-system/movies');
+        const images = await ImageCloudinary.uploadMultiple(req.files, 'movie-ticketing-system/movies');
 
-    const movie = await Movie.create({
-        title,
-        description,
-        release_date,
-        genre,
-        duration,
-        mtrcb_rating,
-        language,
-        director,
-        cast,
-        images
-    })
+        const movie = await Movie.create({
+            title,
+            description,
+            release_date,
+            genre,
+            duration,
+            mtrcb_rating,
+            language,
+            director,
+            cast,
+            images
+        })
+
+
+        res.status(200).json({
+            success: true,
+            message: 'Movie successfully created',
+            movie
+        });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            success: false,
+            err,
+        })
+    }
+}
+
+exports.getSingleMovie = async (req, res, next) => {
+
+    const movie = await Movie.findById(req.params.id);
 
     res.status(200).json({
         success: true,
-        message: 'Movie successfully created',
-        movie
-    });
+        movie,
+    })
+
+}
+
+exports.movieUpdate = async (req, res, next) => {
+
+    try {
+        const {
+            title,
+            description,
+            release_date,
+            genre,
+            duration,
+            mtrcb_rating,
+            language,
+            director,
+            cast
+        } = req.body;
+        const movie = await Movie.findById(req.params.id);
+
+        let images;
+
+        if (req.file) {
+            req.files.push(req.file);
+        }
+
+        if (req.files.length > 0) {
+            const imagesUrl = movie.images.flatMap(image => image.public_id)
+            for (i in imagesUrl) {
+                await cloudinary.v2.uploader.destroy(imagesUrl[i]);
+            }
+            images = await ImageCloudinary.uploadMultiple(req.files, 'movie-ticketing-system/movies');
+        }
+
+        const updateMovie = await Movie.findByIdAndUpdate(movie._id, {
+            title,
+            description,
+            release_date,
+            genre,
+            duration,
+            mtrcb_rating,
+            language,
+            director,
+            cast,
+            images
+        },
+            { new: true, runValidators: true, useFindandModify: false }
+        )
+
+        res.status(200).json({
+            success: true,
+            movie: updateMovie
+        })
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            success: false,
+            err,
+        })
+    }
+}
+
+exports.deleteMovie = async (req, res, next) => {
+
+    await Movie.findByIdAndDelete(req.params.id)
+
+    return res.status(202).json({
+        success: true,
+        message: 'successfully deleted'
+    })
+
 }
 
 exports.movieWithFutureShows = async (req, res, next) => {

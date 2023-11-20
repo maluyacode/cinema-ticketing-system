@@ -49,3 +49,24 @@ body {
     transform: translateX(100%);
   }
 }
+
+.tss-178gktx-MUIDataTableHeadCell-contentWrapper {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+main.MuiBox-root {
+  background-color: #F2FFE9;
+}
+
+.css-1r9jet7 {
+  background-color: #F2FFE9;
+}
+
+.swal2-title{
+  width: 100% !important;
+}
+
+.swal2-popup{
+  font-size: medium !important;
+}

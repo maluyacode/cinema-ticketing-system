@@ -3,9 +3,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 class Toast {
 
-    static success(message) {
+    static success(message = 'Success', position = 'top-center') {
         toast.success(message, {
-            position: "top-center",
+            position: position,
             autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: true,
@@ -16,7 +16,7 @@ class Toast {
         });
     }
 
-    static error(message) {
+    static error(message = 'Success', position = 'top-center') {
         toast.error(message, {
             position: "top-center",
             autoClose: 1500,
@@ -29,7 +29,7 @@ class Toast {
         });
     }
 
-    static warning(message) {
+    static warning(message = 'Success', position = 'top-center') {
         toast.warning(message, {
             position: "top-center",
             autoClose: 1500,

@@ -19,6 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Dashboard, EventSeat, LocalConvenienceStore, MovieFilter, People, SmartDisplay } from '@mui/icons-material';
+import { Link as LinkRouter } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -121,7 +122,7 @@ export default function Sidebar() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open}>
+            <Drawer variant="permanent" open={open}  >
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -129,26 +130,28 @@ export default function Sidebar() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <ListItem key={'Dashboard'} disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
+                    <LinkRouter to='/admin/dashboard' style={{ textDecoration: "none", color: 'inherit' }}>
+                        <ListItem key={'Dashboard'} disablePadding sx={{ display: 'block' }}>
+                            <ListItemButton
                                 sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
+                                    minHeight: 48,
+                                    justifyContent: open ? 'initial' : 'center',
+                                    px: 2.5,
                                 }}
                             >
-                                <Dashboard />
-                            </ListItemIcon>
-                            <ListItemText primary={'Dashboard'} sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : 'auto',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <Dashboard sx={{ color: '#2a4d4e' }} />
+                                </ListItemIcon>
+                                <ListItemText primary={'Dashboard'} sx={{ opacity: open ? 1 : 0, fontWeight: '600' }} />
+                            </ListItemButton>
+                        </ListItem>
+                    </LinkRouter>
                     <ListItem key={'Reservations'} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                             sx={{
@@ -164,9 +167,9 @@ export default function Sidebar() {
                                     justifyContent: 'center',
                                 }}
                             >
-                                <EventSeat />
+                                <EventSeat sx={{ color: '#2a4d4e' }} />
                             </ListItemIcon>
-                            <ListItemText primary={'Reservations'} sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary={'Reservations'} sx={{ opacity: open ? 1 : 0, fontWeight: '600' }} />
                         </ListItemButton>
                     </ListItem>
                     <ListItem key={'Shows'} disablePadding sx={{ display: 'block' }}>
@@ -184,34 +187,36 @@ export default function Sidebar() {
                                     justifyContent: 'center',
                                 }}
                             >
-                                <SmartDisplay />
+                                <SmartDisplay sx={{ color: '#2a4d4e' }} />
                             </ListItemIcon>
-                            <ListItemText primary={'Shows'} sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary={'Shows'} sx={{ opacity: open ? 1 : 0, fontWeight: '600' }} />
                         </ListItemButton>
                     </ListItem>
                 </List>
                 <Divider />
                 <List>
-                    <ListItem key={'Movies'} disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
+                    <LinkRouter to='/admin/movies-list' style={{ textDecoration: "none", color: 'inherit' }}>
+                        <ListItem key={'Movies'} disablePadding sx={{ display: 'block' }}>
+                            <ListItemButton
                                 sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
+                                    minHeight: 48,
+                                    justifyContent: open ? 'initial' : 'center',
+                                    px: 2.5,
                                 }}
                             >
-                                <MovieFilter />
-                            </ListItemIcon>
-                            <ListItemText primary={'Movies'} sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : 'auto',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <MovieFilter sx={{ color: '#2a4d4e' }} />
+                                </ListItemIcon>
+                                <ListItemText primary={'Movies'} sx={{ opacity: open ? 1 : 0 }} />
+                            </ListItemButton>
+                        </ListItem>
+                    </LinkRouter>
                     <ListItem key={'Cinemas'} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                             sx={{
@@ -227,7 +232,7 @@ export default function Sidebar() {
                                     justifyContent: 'center',
                                 }}
                             >
-                                <LocalConvenienceStore />
+                                <LocalConvenienceStore sx={{ color: '#2a4d4e' }} />
                             </ListItemIcon>
                             <ListItemText primary={'Cinemas'} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
@@ -247,13 +252,13 @@ export default function Sidebar() {
                                     justifyContent: 'center',
                                 }}
                             >
-                                <People />
+                                <People sx={{ color: '#2a4d4e' }} />
                             </ListItemIcon>
                             <ListItemText primary={'Users'} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
                 </List>
-            </Drawer>
+            </Drawer >
         </>
     );
 } 
