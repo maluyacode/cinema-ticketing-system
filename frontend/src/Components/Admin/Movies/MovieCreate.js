@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import DrawerHeader from '../Layout/DraweHeader';
 import Sidebar from '../Sidebar'
 import { styled } from '@mui/material/styles';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import genres from 'utils/genres';
 import languageList from 'language-list';
@@ -152,7 +149,8 @@ const MovieCreate = () => {
         },
         validateOnChange: false,
         validationSchema: validateSchema,
-        onSubmit: (values,) => {
+        onSubmit: (values) => {
+            console.log(values)
         },
     });
 
@@ -175,10 +173,13 @@ const MovieCreate = () => {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
                 <Container sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <Paper component='form' sx={{ maxWidth: '900px', width: '100%' }} id='movie-form' onSubmit={(e) => {
-                        formik.handleSubmit()
-                        handleSumit(e);
-                    }}>
+                    <Paper component='form' sx={{ maxWidth: '900px', width: '100%' }} id='movie-form'
+                        // onSubmit={(e) => {
+                        //     formik.handleSubmit()
+                        //     handleSumit(e);
+                        // }}
+                        onSubmit={formik.handleSubmit}
+                    >
                         <Typography variant='h5' p={2}>Add Movie</Typography>
                         <Divider light={false} />
                         <Grid container p={2} my={2} display='flex' justifyContent='center' gap={3} width='100%' columns={14}>

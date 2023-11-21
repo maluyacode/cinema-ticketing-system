@@ -15,6 +15,9 @@ import Dashboard from 'Components/Admin/Dashboard';
 import MoviesList from 'Components/Admin/Movies/MoviesList';
 import MovieCreate from 'Components/Admin/Movies/MovieCreate';
 import MovieUpdate from 'Components/Admin/Movies/MovieUpdate';
+import CinemasList from 'Components/Admin/Cinema/CinemasList';
+import CinemaCreate from 'Components/Admin/Cinema/CinemaCreate';
+import CinemaUpdate from 'Components/Admin/Cinema/CinemaUpdate';
 
 const hideHeader = window.location.pathname.startsWith('/admin');
 
@@ -40,6 +43,9 @@ function App() {
           <Route path='/admin/movie-create' element={<MovieCreate />} />
           <Route path='/admin/movie-update/:id' element={<MovieUpdate />} />
 
+          <Route path='/admin/cinemas-list' element={<CinemasList />} exact="true" />
+          <Route path='/admin/cinema-create' element={<CinemaCreate />} exact="true" />
+          <Route path='/admin/cinema-update/:id' element={<CinemaUpdate />} exact="true" />
         </Routes>
         <ToastContainer
           position="top-center"

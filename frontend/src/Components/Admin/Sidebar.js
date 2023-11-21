@@ -218,24 +218,26 @@ export default function Sidebar() {
                         </ListItem>
                     </LinkRouter>
                     <ListItem key={'Cinemas'} disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
+                        <LinkRouter to='/admin/cinemas-list' style={{ textDecoration: "none", color: 'inherit' }}>
+                            <ListItemButton
                                 sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
+                                    minHeight: 48,
+                                    justifyContent: open ? 'initial' : 'center',
+                                    px: 2.5,
                                 }}
                             >
-                                <LocalConvenienceStore sx={{ color: '#2a4d4e' }} />
-                            </ListItemIcon>
-                            <ListItemText primary={'Cinemas'} sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : 'auto',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <LocalConvenienceStore sx={{ color: '#2a4d4e' }} />
+                                </ListItemIcon>
+                                <ListItemText primary={'Cinemas'} sx={{ opacity: open ? 1 : 0 }} />
+                            </ListItemButton>
+                        </LinkRouter>
                     </ListItem>
                     <ListItem key={'Users'} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
