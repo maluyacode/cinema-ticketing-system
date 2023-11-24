@@ -23,16 +23,18 @@ const userSchema = new mongoose.Schema({
         minLength: [8, 'Your password must be longer than 6 characters'],
         select: false
     },
-    profile_pic: {
-        public_id: {
-            type: String,
-            required: true
-        },
-        url: {
-            type: String,
-            required: true
+    images: [
+        {
+            public_id: {
+                type: String,
+                required: true
+            },
+            url: {
+                type: String,
+                required: true
+            }
         }
-    },
+    ],
     role: {
         type: String,
         default: 'user'
@@ -51,6 +53,17 @@ userSchema.pre('save', async function (next) {
     }
     this.password = await bcrypt.hash(this.password, 10);
 })
+
+userSchema.pre(["updateOne", "findByIdAndUpdate", "findOneAndUpdate"], async function (next) {
+
+    const data = this.getUpdate();
+    
+    if (data.password) {
+        data.password = await bcrypt.hash(data.password, 10);
+    }
+    next()
+
+});
 
 userSchema.methods.getJwtToken = function () {
     return jwt.sign({ id: this.id }, process.env.JWT_SECRET, {

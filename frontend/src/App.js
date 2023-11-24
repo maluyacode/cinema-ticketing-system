@@ -21,6 +21,9 @@ import CinemaUpdate from 'Components/Admin/Cinema/CinemaUpdate';
 import ShowsList from 'Components/Admin/Show/ShowsList';
 import ShowCreate from 'Components/Admin/Show/ShowCreate';
 import ShowUpdate from 'Components/Admin/Show/ShowUpdate';
+import UsersList from 'Components/Admin/User/UsersList';
+import UserCreate from 'Components/Admin/User/UserCreate';
+import UserUpdate from 'Components/Admin/User/UserUpdate';
 
 const hideHeader = window.location.pathname.startsWith('/admin');
 
@@ -52,6 +55,10 @@ function App() {
           <Route path='/admin/shows-list' element={<ShowsList />} exact={true} />
           <Route path='/admin/show-create' element={<ShowCreate />} exact={true} />
           <Route path='/admin/show-update/:id' element={<ShowUpdate />} exact={true} />
+
+          <Route path='/admin/users-list' element={<UsersList />} exact={true} />
+          <Route path='/admin/user-create' element={<UserCreate />} exact={true} />
+          <Route path='/admin/user-update/:id' element={<UserUpdate />} exact={true} />
 
         </Routes>
         <ToastContainer

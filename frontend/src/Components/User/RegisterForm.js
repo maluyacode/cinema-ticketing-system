@@ -21,6 +21,7 @@ const RegisterForm = ({ handleSubmit, handleChange, loading }) => {
                     name="firstName"
                     required
                     fullWidth
+                    size="small"
                     id="firstName"
                     label="First Name"
                     autoFocus
@@ -29,6 +30,7 @@ const RegisterForm = ({ handleSubmit, handleChange, loading }) => {
             <Grid item xs={12} sm={6}>
                 <TextField
                     required
+                    size="small"
                     fullWidth
                     id="lastName"
                     label="Last Name"
@@ -38,6 +40,7 @@ const RegisterForm = ({ handleSubmit, handleChange, loading }) => {
             <Grid item xs={12}>
                 <TextField
                     required
+                    size="small"
                     fullWidth
                     id="email"
                     label="Email Address"
@@ -47,6 +50,7 @@ const RegisterForm = ({ handleSubmit, handleChange, loading }) => {
             <Grid item xs={12}>
                 <TextField
                     required
+                    size="small"
                     fullWidth
                     name="password"
                     label="Password"

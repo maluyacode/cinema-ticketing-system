@@ -14,7 +14,7 @@ body {
 
 .App {
   height: 100vh;
-  /* background-color: #2a4d4ee7; */
+  background-color: #FAF1E4 !important; 
 }
 
 .content {

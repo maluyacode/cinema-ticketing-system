@@ -4,9 +4,10 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
 import BlockbusterMessage from "./Childs/BlockbusterMessage";
 import { authenticate } from "utils/helpers";
-import { Avatar, Container, CssBaseline, Box, Typography } from '@mui/material'
+import { Avatar, Container, CssBaseline, Box, Typography, Paper } from '@mui/material'
 import Toast from "Components/Layout/Toast"
 import './Login-Register.css'
+import { GoogleLogin } from '@react-oauth/google';
 
 const Register = () => {
 
@@ -73,36 +74,64 @@ const Register = () => {
         }
     }
 
+    const loginWithGoogle = async (response) => {
+        console.log(response)
+        try {
+
+            const { data } = await axios.post(`${process.env.REACT_APP_API}/api/v1/login-with-google`, { credential: response.credential })
+
+            Toast.success("Account created successfully", 'top-right')
+
+            setTimeout(() => {
+                setLoading(false)
+                authenticate(data, () => navigate("/"))
+                window.location.reload()
+            }, 1500)
+
+        } catch ({ response }) {
+            setLoading(false)
+            Toast.error(response.data.message);
+        }
+
+    }
+
+    const responseMessage = (response) => {
+        loginWithGoogle(response);
+    };
+    const errorMessage = (error) => {
+        console.log(error);
+    };
+
+
     return (
-        <>
-            <div className="register-container content" style={{ height: '100%'}}>
-                <div className="inner-container register-inner-container" style={{ height: '90%' }}>
-                    <BlockbusterMessage />
-                    <div className="create-container">
-                        <Container component="main" maxWidth="xs" sx={{ height: 'fit-content' }}>
-                            <CssBaseline />
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                }}
-                            >
-                                <Avatar sx={{ m: 1, bgcolor: '#70a0a1' }} src={avatar} />
-                                <Typography component="h1" variant="h5">
-                                    Create Account
-                                </Typography>
-                                <RegisterForm
-                                    handleSubmit={handleSubmit}
-                                    handleChange={handleChange}
-                                    loading={loading}
-                                />
-                            </Box>
-                        </Container>
-                    </div>
-                </div>
-            </div>
-        </>
+        <Container component="main" className='content'>
+            <Paper
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    p: 4,
+                    px: 10,
+                    width: '100%',
+                    maxWidth: '600px',
+                    margin: 'auto',
+                    borderRadius: 5
+                }}
+            >
+                <Avatar sx={{ m: 1, bgcolor: '#70a0a1' }} src={avatar} />
+                <Typography component="h1" variant="h5">
+                    Create Account
+                </Typography>
+                <RegisterForm
+                    handleSubmit={handleSubmit}
+                    handleChange={handleChange}
+                    loading={loading}
+                />
+                < br />
+                <GoogleLogin onSuccess={responseMessage} onError={errorMessage} size='meduim' logo_alignment='left' text='signup_with' />
+            </Paper>
+        </Container>
+
     );
 };
 

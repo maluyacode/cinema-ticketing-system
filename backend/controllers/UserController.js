@@ -4,37 +4,164 @@ const crypto = require('crypto');
 const sendToken = require('../utils/jsonWebToken')
 const sendEmail = require('../utils/sendEmail')
 const ImageCloudinary = require('../utils/ImageCloudinary');
+const { OAuth2Client } = require('google-auth-library');
+const { response } = require('express');
+
+const client = new OAuth2Client({ clientId: process.env.GOOGLE_API_TOKEN })
 
 exports.getAllUser = async (req, res, next) => {
-    const users = await User.find();
 
-    res.status(200).json({
-        sucess: true,
-        users
-    })
-}
+    try {
 
-exports.register = async (req, res, next) => {
-    console.log(req);
-    const profile_pic = await ImageCloudinary.uploadSingle(req.body.profile_pic, 'movie-ticketing-system/profiles');
+        const users = await User.find();
 
-    const { name, email, password, role } = req.body;
+        res.status(200).json({
+            sucess: true,
+            users
+        })
 
-    const user = await User.create({
-        name,
-        email,
-        password,
-        profile_pic
-    });
-
-    if (!user) {
+    } catch (err) {
+        console.log(err)
         return res.status(500).json({
             success: false,
-            message: 'Failed to create an account'
+            message: `Error occured, contact the developer for inquiries`,
         })
     }
 
-    sendToken(user, 200, res);
+}
+
+exports.getSingleUser = async (req, res, next) => {
+
+    try {
+        const { id } = req.params
+
+        const user = await User.findById(id);
+
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: "User not created"
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            user
+        })
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Error occured, contact the developer for inquiries`,
+        })
+    }
+
+}
+
+exports.updateUserByAdmin = async (req, res, next) => {
+
+    try {
+
+        const { name, email, password, role } = req.body;
+        const { id } = req.params
+
+        const newUserData = {
+            name,
+            email,
+            password,
+            role
+        }
+
+        if (password === '') {
+            delete newUserData.password
+        }
+
+        const user = await User.findById(id)
+
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: "User not found"
+            })
+        }
+
+        let images;
+
+        if (req.files.length > 0) {
+            let imagesUrl
+            if (user.images) {
+                imagesUrl = user.images.flatMap(image => image.public_id)
+                for (i in imagesUrl) {
+                    await cloudinary.v2.uploader.destroy(imagesUrl[i]);
+                }
+            }
+            images = await ImageCloudinary.uploadMultiple(req.files, 'movie-ticketing-system/movies');
+            newUserData.images = images
+        }
+
+        const updatedUser = await User.findByIdAndUpdate(id, newUserData, {
+            new: true,
+            runValidators: true
+        })
+
+        if (!updatedUser) {
+            return res.status(500).json({
+                success: false,
+                message: 'Failed to create an account'
+            })
+        }
+
+        res.status(200).json({
+            success: true,
+            user: updatedUser
+        })
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Error occured, contact the developer for inquiries`,
+        })
+    }
+}
+
+exports.register = async (req, res, next) => {
+    console.log(req.files)
+
+    try {
+
+        const { name, email, password, role } = req.body;
+
+        let images;
+        if (req.files.length > 0) {
+            images = await ImageCloudinary.uploadMultiple(req.files, 'movie-ticketing-system/profiles');
+        }
+
+        const user = await User.create({
+            name,
+            email,
+            password,
+            images,
+            role
+        });
+
+        if (!user) {
+            return res.status(500).json({
+                success: false,
+                message: 'Failed to create an account'
+            })
+        }
+
+        sendToken(user, 200, res);
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Error occured, contact the developer for inquiries`,
+        })
+    }
 }
 
 exports.login = async (req, res, next) => {
@@ -189,5 +316,64 @@ exports.updatePassword = async (req, res, next) => {
 }
 
 exports.destroy = async (req, res, next) => {
+    const { id } = req.params;
 
+    try {
+
+        await User.findByIdAndDelete(id);
+
+        return res.status(200).json({
+            success: true,
+            message: 'User deleted successfully'
+        })
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Error occured, contact the developer for inquiries`,
+        })
+    }
+
+
+}
+
+exports.loginWithGoogle = async (req, res, next) => {
+    try {
+
+        const { credential } = req.body;
+
+        const { payload } = await client.verifyIdToken({ idToken: credential, audience: process.env.GOOGLE_API_TOKEN });
+        console.log(payload)
+        if (payload.email_verified) {
+            const { email, name, picture, iss } = payload
+
+            const user = await User.findOne({ email });
+
+            const image = {
+                url: picture,
+                public_id: iss
+            }
+
+            if (!user) {
+                const newUser = await User.create({
+                    name,
+                    email,
+                    images: [image],
+                    password: email + process.env.JWT_SECRET
+                })
+                sendToken(newUser, 200, res)
+
+            } else {
+                sendToken(user, 200, res)
+            }
+        }
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Error occured, contact the developer for inquiries`,
+        })
+    }
 }

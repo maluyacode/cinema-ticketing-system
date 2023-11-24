@@ -28,7 +28,7 @@ exports.isAuthorized = (...roles) => {
 
     return (req, res, next) => {
         if (!roles.includes(req.user.role)) {
-            return res.status(403).json({ message: `Role (${req.user.role}) is not allowed to acccess this resource` })
+            return res.status(403).json({ message: `You are not allowed to acccess or do something on this resource` })
         }
         next()
     }

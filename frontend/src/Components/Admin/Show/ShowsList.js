@@ -112,7 +112,7 @@ const ShowsList = () => {
                     customBodyRender: (movie, tableMeta, updateValue) => {
                         return (
                             <>
-                                <Typography variant='subtitle2'>{movie.title}</Typography>
+                                <Typography variant='subtitle2' width='200px'>{movie.title}</Typography>
                                 <img src={movie.images && movie.images[0].url} style={{ width: '80px', height: '120px', objectFit: 'cover' }} />
                             </>
                         )
@@ -227,9 +227,14 @@ const ShowsList = () => {
     }
 
     const getShowsList = async () => {
-        const { data: { shows } } = await axios.get(`${process.env.REACT_APP_API}/api/v1/show/list-all`, config);
-        setShows(shows);
-        listAllShows(shows)
+        try {
+            const { data: { shows } } = await axios.get(`${process.env.REACT_APP_API}/api/v1/show/list-all`, config);
+            setShows(shows);
+            listAllShows(shows)
+        } catch ({ response }) {
+            console.log(response)
+            Toast.error(response.data.message);
+        }
     }
 
     useEffect(() => {

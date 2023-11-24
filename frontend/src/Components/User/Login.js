@@ -5,12 +5,16 @@ import { authenticate } from 'utils/helpers'
 import './Login-Register.css'
 import { useNavigate } from 'react-router-dom'
 import BlockbusterMessage from "./Childs/BlockbusterMessage";
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+
 import Toast from "Components/Layout/Toast"
 import {
     Box,
     Typography,
-    Container
+    Container,
+    Paper
 } from "@mui/material"
+import { GoogleLogin } from '@react-oauth/google';
 
 export default function Login() {
     const navigate = useNavigate();
@@ -60,32 +64,59 @@ export default function Login() {
         }
     }
 
+    const loginWithGoogle = async (response) => {
+        console.log(response)
+        try {
+
+            const { data } = await axios.post(`${process.env.REACT_APP_API}/api/v1/login-with-google`, { credential: response.credential })
+
+            Toast.success("Login Successfully")
+
+            setTimeout(() => {
+                setLoading(false)
+                authenticate(data, () => navigate("/"))
+                window.location.reload()
+            }, 1500)
+
+        } catch ({ response }) {
+            setLoading(false)
+            Toast.error(response.data.message);
+        }
+
+    }
+
+    const responseMessage = (response) => {
+        loginWithGoogle(response);
+    };
+    const errorMessage = (error) => {
+        console.log(error);
+    };
+
     return (
-        <>
-            <div className="register-container">
-                <div className="inner-container">
-                    <BlockbusterMessage />
-                    <div className="create-container">
-                        <Container component="main" maxWidth="xs">
-                            <Box
-                                sx={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "center",
-                                }}
-                            >
-                                <Typography component="h1" variant="h5">
-                                    Sign in
-                                </Typography>
-                                <LoginForm
-                                    handleSubmit={handleSubmit}
-                                    handleChange={handleChange}
-                                    loading={loading} />
-                            </Box>
-                        </Container>
-                    </div>
-                </div>
-            </div >
-        </>
+        <Container component="main" className='content'>
+            <Paper
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    p: 10,
+                    width: '100%',
+                    maxWidth: '500px',
+                    margin: 'auto',
+                    mt: 2,
+                    borderRadius: 5
+                }}
+            >
+                <Typography component="h1" variant="h5">
+                    Sign in
+                </Typography>
+                <LoginForm
+                    handleSubmit={handleSubmit}
+                    handleChange={handleChange}
+                    loading={loading} />
+                < br />
+                <GoogleLogin onSuccess={responseMessage} onError={errorMessage} size='meduim' logo_alignment='left' />
+            </Paper>
+        </Container>
     );
 }

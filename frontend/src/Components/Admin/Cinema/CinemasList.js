@@ -57,10 +57,15 @@ const CinemasList = () => {
     })
 
     const getCinemas = async () => {
-        const { data: { cinemas } } = await axios.get(`${process.env.REACT_APP_API}/api/v1/cinema/list-all`, config);
-        console.log(cinemas)
-        setCinemas(cinemas);
-        listAllCinemas(cinemas)
+        try {
+            const { data: { cinemas } } = await axios.get(`${process.env.REACT_APP_API}/api/v1/cinema/list-all`, config);
+            console.log(cinemas)
+            setCinemas(cinemas);
+            listAllCinemas(cinemas)
+        } catch ({ response }) {
+            console.log(response)
+            Toast.error(response.data.message);
+        }
     }
 
     const showCinemaDetails = async (id) => {
@@ -110,6 +115,26 @@ const CinemasList = () => {
             {
                 name: "id",
                 label: "ID",
+                options: {
+                    display: false
+                }
+            },
+            {
+                name: "images",
+                label: "Image",
+                options: {
+                    customBodyRender: (images, tableMeta, updateValue) => {
+                        return (
+                            <>
+                                <img src={images && images[0].url}
+                                    style={{
+                                        width: '80px', height: '100px', objectFit: 'cover', borderColor: 'black',
+                                        borderWidth: '1px', borderStyle: 'solid'
+                                    }} />
+                            </>
+                        )
+                    }
+                }
             },
             {
                 name: "name",
@@ -154,6 +179,7 @@ const CinemasList = () => {
             data.push({
                 id: cinema._id,
                 location: cinema.location,
+                images: cinema.images,
                 name: cinema.name,
                 capacity: cinema.capacity,
                 screen_type: cinema.screen_type.name,

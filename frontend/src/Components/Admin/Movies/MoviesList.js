@@ -59,10 +59,14 @@ const MoviesList = () => {
     })
 
     const listAllMovies = async () => {
-
-        const { data: { movies } } = await axios.get(`${process.env.REACT_APP_API}/api/v1/movie/list-all`, config)
-        setMovies(movies);
-        getMoviesList(movies)
+        try {
+            const { data: { movies } } = await axios.get(`${process.env.REACT_APP_API}/api/v1/movie/list-all`, config)
+            setMovies(movies);
+            getMoviesList(movies)
+        } catch ({ response }) {
+            console.log(response)
+            Toast.error(response.data.message);
+        }
     }
 
     const showMovieDetails = async (id) => {
@@ -77,6 +81,26 @@ const MoviesList = () => {
             {
                 name: "id",
                 label: "ID",
+                options: {
+                    display: false
+                }
+            },
+            {
+                name: "images",
+                label: "Image",
+                options: {
+                    customBodyRender: (images, tableMeta, updateValue) => {
+                        return (
+                            <>
+                                <img src={images && images[0].url}
+                                    style={{
+                                        width: '80px', height: '100px', objectFit: 'cover', borderColor: 'black',
+                                        borderWidth: '1px', borderStyle: 'solid'
+                                    }} />
+                            </>
+                        )
+                    }
+                }
             },
             {
                 name: "title",
@@ -130,6 +154,7 @@ const MoviesList = () => {
             data.push({
                 id: movie._id,
                 title: movie.title,
+                images: movie.images,
                 release_date: movie.release_date,
                 duration: movie.duration,
                 language: movie.language,

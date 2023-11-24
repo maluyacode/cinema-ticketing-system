@@ -45,7 +45,7 @@ exports.create = async (req, res, next) => {
             })
         }
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: "Cinema created successfully",
             cinema

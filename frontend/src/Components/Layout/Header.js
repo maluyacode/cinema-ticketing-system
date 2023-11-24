@@ -17,6 +17,7 @@ import { logout, getUser } from 'utils/helpers';
 import { useNavigate, Link as LinkRouter } from 'react-router-dom';
 import Toast from './Toast';
 import axios from 'axios';
+import { googleLogout } from '@react-oauth/google';
 
 
 function ResponsiveAppBar() {
@@ -56,7 +57,7 @@ function ResponsiveAppBar() {
             await axios.get(`${process.env.REACT_APP_API}/api/v1/logout`)
 
             setUser('')
-
+            googleLogout()
             logout(() => navigate('/login'))
         } catch (error) {
             Toast.error(error.response.data.message)
@@ -87,7 +88,7 @@ function ResponsiveAppBar() {
                         {user ? (<Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <Avatar alt="Remy Sharp" src={user ? user.profile_pic.url : ''} />
+                                    <Avatar alt="Remy Sharp" src={user.images ? user.images[0].url : ''} />
                                 </IconButton>
                             </Tooltip>
                             <Menu

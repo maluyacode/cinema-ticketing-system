@@ -25,11 +25,13 @@ export function LoginForm({ handleSubmit, handleChange, loading }) {
             name="email"
             autoComplete="email"
             autoFocus
+            size="small"
             onChange={handleChange} />
         <TextField
             margin="normal"
             required
             fullWidth
+            size="small"
             name="password"
             label="Password"
             type="password"
