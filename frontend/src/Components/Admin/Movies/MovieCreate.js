@@ -174,11 +174,11 @@ const MovieCreate = () => {
                 <DrawerHeader />
                 <Container sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Paper component='form' sx={{ maxWidth: '900px', width: '100%' }} id='movie-form'
-                        // onSubmit={(e) => {
-                        //     formik.handleSubmit()
-                        //     handleSumit(e);
-                        // }}
-                        onSubmit={formik.handleSubmit}
+                        onSubmit={(e) => {
+                            formik.handleSubmit()
+                            handleSumit(e);
+                        }}
+                    // onSubmit={formik.handleSubmit}
                     >
                         <Typography variant='h5' p={2}>Add Movie</Typography>
                         <Divider light={false} />

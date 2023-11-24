@@ -1,4 +1,5 @@
 const Cinema = require('../models/Cinema');
+const Show = require('../models/Show')
 const cloudinary = require('cloudinary');
 const ImageCloudinary = require('../utils/ImageCloudinary')
 
@@ -164,4 +165,42 @@ exports.deleteCinema = async (req, res, next) => {
         })
     }
 
+}
+
+exports.cinemaWithActiveShows = async (req, res, next) => {
+    try {
+        const { showId } = req.query
+        const { id } = req.params;
+        const cinema = await Cinema.findById(id);
+        const shows = await Show.where({ cinema: id })
+            .where({
+                start_time: { $gte: new Date(Date.now()) }
+            })
+            .where({
+                _id: { $ne: showId },
+            })
+            .sort('start_time');
+        console.log(showId)
+        console.log(shows)
+        if (!cinema) {
+            return res.status(404).json({
+                success: false,
+                message: 'Cinema not found',
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            cinema,
+            shows,
+        })
+
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Cannot find cinema, don't try to enject`,
+        })
+    }
 }

@@ -10,8 +10,8 @@ class ImageCloudinary {
 
         const result = await cloudinary.v2.uploader.upload(postImage, {
             folder: 'profiles', // folder name in cloudinary, if not exist it will create automatically.
-            width: 200, // convert the width of image to 200 pixel
-            crop: "scale",
+            // width: 200, 
+            // crop: "scale",
         });
 
         return {
@@ -29,8 +29,8 @@ class ImageCloudinary {
 
             const result = await cloudinary.v2.uploader.upload(image, {
                 folder: folderName, // folder name in cloudinary, if not exist it will create automatically.
-                width: 200, // convert the width of image to 200 pixel
-                crop: "scale",
+                // width: 200, 
+                // crop: "scale",
             });
 
             images.push({

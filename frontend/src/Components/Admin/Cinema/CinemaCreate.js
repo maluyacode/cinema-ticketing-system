@@ -110,7 +110,7 @@ const CinemaCreate = () => {
     }
 
     const createCinema = async (cinemaData) => {
-        
+
         setLoadingButton(true)
         try {
             const { data: { cinema, success } } = await axios.post(`${process.env.REACT_APP_API}/api/v1/cinema/create`, cinemaData, config);

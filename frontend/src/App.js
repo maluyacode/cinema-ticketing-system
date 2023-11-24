@@ -18,6 +18,9 @@ import MovieUpdate from 'Components/Admin/Movies/MovieUpdate';
 import CinemasList from 'Components/Admin/Cinema/CinemasList';
 import CinemaCreate from 'Components/Admin/Cinema/CinemaCreate';
 import CinemaUpdate from 'Components/Admin/Cinema/CinemaUpdate';
+import ShowsList from 'Components/Admin/Show/ShowsList';
+import ShowCreate from 'Components/Admin/Show/ShowCreate';
+import ShowUpdate from 'Components/Admin/Show/ShowUpdate';
 
 const hideHeader = window.location.pathname.startsWith('/admin');
 
@@ -36,16 +39,20 @@ function App() {
           <Route path='/reservation/:showId' element={<Reservation />} caseSensitive={true} />
           <Route path='/success' element={<Success />} caseSensitive={true} />
 
-
           <Route path='/admin/dashboard' element={<Dashboard />} />
 
           <Route path='/admin/movies-list' element={<MoviesList />} />
           <Route path='/admin/movie-create' element={<MovieCreate />} />
           <Route path='/admin/movie-update/:id' element={<MovieUpdate />} />
 
-          <Route path='/admin/cinemas-list' element={<CinemasList />} exact="true" />
-          <Route path='/admin/cinema-create' element={<CinemaCreate />} exact="true" />
-          <Route path='/admin/cinema-update/:id' element={<CinemaUpdate />} exact="true" />
+          <Route path='/admin/cinemas-list' element={<CinemasList />} exact={true} />
+          <Route path='/admin/cinema-create' element={<CinemaCreate />} exact={true} />
+          <Route path='/admin/cinema-update/:id' element={<CinemaUpdate />} exact={true} />
+
+          <Route path='/admin/shows-list' element={<ShowsList />} exact={true} />
+          <Route path='/admin/show-create' element={<ShowCreate />} exact={true} />
+          <Route path='/admin/show-update/:id' element={<ShowUpdate />} exact={true} />
+
         </Routes>
         <ToastContainer
           position="top-center"
