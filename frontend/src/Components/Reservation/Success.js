@@ -5,7 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const Success = () => {
     return (
-        <Container className='content' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+        <Container className='content' sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', pb: 27 }}>
             <Paper sx={{ maxWidth: '600px', width: '600px', paddingBottom: '50px', marginTop: '20px' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '100px', backgroundColor: '#3cb879' }}>
                     <CheckCircleIcon sx={{ fontSize: '75px', color: 'white' }} />

@@ -46,9 +46,8 @@ const SeatSelection = ({ setSelectedSeats, setPay, show, selectedSeats, numOfTic
 
     }
 
-
     return (
-        <Grid container xl={12} width='100%' pt={4}>
+        <Grid container width={'100%'} gap={4}>
             <Grid item display='flex' flexDirection='row' justifyContent='space-between' width='inherit'>
                 <Typography variant='h6'>Select your seat(s)</Typography>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '30%', flexWrap: 'wrap' }}>
@@ -63,8 +62,8 @@ const SeatSelection = ({ setSelectedSeats, setPay, show, selectedSeats, numOfTic
                     </div>
                 </div>
             </Grid>
-            <Grid item width='100%' >
-                <Box component='div' pb={3} sx={{ width: 'inherit', margin: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', flexWrap: 'nowrap', overflowX: 'scroll' }}>
+            <Grid item width='100%'>
+                <Box component='div' pb={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
                     <div style={{ height: '20px', width: '600px', backgroundColor: '#45474B', marginBottom: '20px', marginTop: '10px', textAlign: 'center', color: 'white' }}>Screen</div>
                     {show.cinema && show.cinema.seat_layout.map((seat) => {
                         let row = [];
@@ -83,7 +82,9 @@ const SeatSelection = ({ setSelectedSeats, setPay, show, selectedSeats, numOfTic
                                 style={{
                                     backgroundColor: bgColor,
                                     margin: "8px",
-                                    color: "black"
+                                    color: "black",
+                                    fontSize: 10,
+                                    width: '50px'
                                 }}
                                 disabled={isDisabled}
                                 size='small'

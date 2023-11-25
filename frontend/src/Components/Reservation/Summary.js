@@ -15,7 +15,7 @@ const Summary = ({ setPay, show, numOfTickets, serviceFee, selectedSeats, totalP
     const clickProceed = () => {
         setPay(true)
         setTimeout(() => {
-            window.location.href = '#payment'
+            window.location.href = '#pay-container'
         }, 100)
     }
 

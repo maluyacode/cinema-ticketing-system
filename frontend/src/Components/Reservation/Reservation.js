@@ -18,9 +18,10 @@ const Reservation = () => {
     const [show, setShow] = useState([]);
     const { showId } = useParams();
     const [numOfTickets, setNumOfTickets] = useState(1);
-    const [paymentMethod, setPaymentMethod] = useState('paypal');
+    const [paymentMethod, setPaymentMethod] = useState('credit card');
     const [proceedSummary, setProceedSummary] = useState(false);
     const [pay, setPay] = useState(false);
+    const [loadingButton, setLoadingButton] = useState(false);
     const navigate = useNavigate()
 
     const serviceFee = 20;
@@ -44,20 +45,28 @@ const Reservation = () => {
         total_price: totalPrice,
     }
 
-    const createReservation = async (e) => {
-        console.log("Asd")
-        e.target.setAttribute('disabled', 'true')
-        e.target.style.backgroundColor = 'rgb(178 176 176 / 90%)'
-        e.target.textContent = 'Processing';
+    const createReservation = async (paymentData) => {
+        setLoadingButton(true)
+        try {
 
-        const config = {
-            headers: {
-                'Authorization': getToken()
+            const config = {
+                headers: {
+                    'Authorization': getToken()
+                }
             }
+
+            const { data } = await axios.post(`${process.env.REACT_APP_API}/api/v1/reservation/create`, reservation, config);
+            setLoadingButton(false)
+            Toast.success('We reserved your seat(s)');
+
+            navigate('/success')
+
+        } catch ({ response }) {
+            console.log(response)
+            setLoadingButton(false)
+            Toast.error(response && response.data.message, 'top-right');
+            navigate('/login')
         }
-        const response = await axios.post(`${process.env.REACT_APP_API}/api/v1/reservation/create`, reservation, config);
-        Toast.success('We reserved your seat(s)');
-        navigate('/success')
     }
 
     useEffect(() => {
@@ -99,7 +108,7 @@ const Reservation = () => {
                 key={paymentMethod}
                 show={show}
                 numOfTickets={numOfTickets}
-
+                loadingButton={loadingButton}
                 setPay={setPay}
                 setProceedSummary={setProceedSummary}
                 setNumOfTickets={setNumOfTickets}
