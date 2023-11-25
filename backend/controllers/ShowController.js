@@ -3,6 +3,7 @@ const Movie = require('../models/Movie');
 const Cinema = require('../models/Cinema')
 const ImageCloudinary = require('../utils/ImageCloudinary')
 const cloudinary = require('cloudinary');
+const mongoose = require('mongoose');
 
 exports.allShows = async (req, res, next) => {
 
@@ -300,10 +301,75 @@ exports.showsOfMovie = async (req, res, next) => {
         }
     }).populate('cinema');
 
+    const { start_date, end_date } = req.query;
+    const { id } = req.params;
+    const startDate = new Date(start_date);
+    startDate.setDate(startDate.getDate() - 1)
+    const endDate = new Date(end_date);
+    endDate.setDate(endDate.getDate() + 0.5)
+
+    const groupShows = await Show.aggregate([
+        {
+            $match: {
+                movie: new mongoose.Types.ObjectId(id),
+                start_time: {
+                    $gte: new Date(startDate),
+                    $lte: new Date(end_date)
+                }
+            }
+        },
+        {
+            $lookup: {
+                from: 'movies',
+                localField: 'movie',
+                foreignField: '_id',
+                as: 'movie'
+            }
+        },
+        {
+            $lookup: {
+                from: 'cinemas',
+                localField: 'cinema',
+                foreignField: '_id',
+                as: 'cinema'
+            }
+        },
+        {
+            $project: {
+                _id: 0,
+                movie: { $arrayElemAt: ['$movie', 0] },
+                cinema: { $arrayElemAt: ['$cinema', 0] },
+                location: { $arrayElemAt: ['$cinema.location', 0] },
+                date: { $dateToString: { format: '%Y-%m-%d', date: '$start_time' } },
+                show_details: '$$ROOT'
+            }
+        },
+        {
+            $group: {
+                _id: { cinema: '$cinema.name', date: '$date' },
+                shows: { $push: '$$ROOT' },
+                location: { $first: '$location' }
+            }
+        },
+        {
+            $project: {
+                _id: 0,
+                cinema: '$_id.cinema',
+                date: '$_id.date',
+                shows: 1,
+                location: 1,
+            }
+        }
+    ]);
+
+    console.log("   ")
+    console.log(groupShows)
+
     return res.status(200).json({
         success: true,
         movie,
-        shows
+        shows,
+        groupShows
     })
 
 }

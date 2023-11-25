@@ -76,7 +76,9 @@ function ResponsiveAppBar() {
 
     return (
         <ThemeProvider theme={darkTheme}>
-            <AppBar position="fixed">
+            <AppBar
+                // position="fixed"
+            >
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <LeftMenu

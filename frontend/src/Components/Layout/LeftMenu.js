@@ -118,6 +118,8 @@ export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseN
                     }
                 }}>
                 <Button
+                    component={Link}
+                    to='/movies'
                     key={'Movies'}
                     onClick={handleCloseNavMenu}
                     sx={{

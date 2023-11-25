@@ -12,6 +12,7 @@ import SeatSelection from 'Components/Reservation/SeatSelection';
 import Reservation from 'Components/Reservation/Reservation';
 import Success from 'Components/Reservation/Success';
 import Dashboard from 'Components/Admin/Dashboard';
+import MovieListing from 'Components/MovieListing';
 import MoviesList from 'Components/Admin/Movies/MoviesList';
 import MovieCreate from 'Components/Admin/Movies/MovieCreate';
 import MovieUpdate from 'Components/Admin/Movies/MovieUpdate';
@@ -24,6 +25,7 @@ import ShowUpdate from 'Components/Admin/Show/ShowUpdate';
 import UsersList from 'Components/Admin/User/UsersList';
 import UserCreate from 'Components/Admin/User/UserCreate';
 import UserUpdate from 'Components/Admin/User/UserUpdate';
+import ProtectedRoute from 'utils/ProtectedRoute';
 
 const hideHeader = window.location.pathname.startsWith('/admin');
 
@@ -31,34 +33,36 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {!hideHeader && <Header />}
+        <Header key={hideHeader} />
         <Routes>
+          <Route path='/' element={<Home />} caseSensitive={true} />
           <Route path='/login' element={<Login />} caseSensitive={true} />
           <Route path='/register' element={<Register />} caseSensitive={true} />
           <Route path='/forgot/password' element={<ForgotPassword />} caseSensitive={true} />
           <Route path='/password/reset/:token' element={<ResetPassword />} exact="true" />
+
+          <Route path='/movies' element={<MovieListing />} exact="true" />
           <Route path='/movie/shows/:id' element={<MovieShows />} exact="true" />
-          <Route path='/' element={<Home />} caseSensitive={true} />
           <Route path='/reservation/:showId' element={<Reservation />} caseSensitive={true} />
           <Route path='/success' element={<Success />} caseSensitive={true} />
 
-          <Route path='/admin/dashboard' element={<Dashboard />} />
+          <Route path='/admin/dashboard' element={<ProtectedRoute isAdmin={true}> <Dashboard /> </ProtectedRoute>} />
 
-          <Route path='/admin/movies-list' element={<MoviesList />} />
-          <Route path='/admin/movie-create' element={<MovieCreate />} />
-          <Route path='/admin/movie-update/:id' element={<MovieUpdate />} />
+          <Route path='/admin/movies-list' element={<ProtectedRoute isAdmin={true}> <MoviesList /> </ProtectedRoute>} />
+          <Route path='/admin/movie-create' element={<ProtectedRoute isAdmin={true}> <MovieCreate /> </ProtectedRoute>} />
+          <Route path='/admin/movie-update/:id' element={<ProtectedRoute isAdmin={true}> <MovieUpdate /> </ProtectedRoute>} />
 
-          <Route path='/admin/cinemas-list' element={<CinemasList />} exact={true} />
-          <Route path='/admin/cinema-create' element={<CinemaCreate />} exact={true} />
+          <Route path='/admin/cinemas-list' element={<ProtectedRoute isAdmin={true}> <CinemasList /> </ProtectedRoute>} exact={true} />
+          <Route path='/admin/cinema-create' element={<ProtectedRoute isAdmin={true}> <CinemaCreate /> </ProtectedRoute>} exact={true} />
           <Route path='/admin/cinema-update/:id' element={<CinemaUpdate />} exact={true} />
 
-          <Route path='/admin/shows-list' element={<ShowsList />} exact={true} />
-          <Route path='/admin/show-create' element={<ShowCreate />} exact={true} />
-          <Route path='/admin/show-update/:id' element={<ShowUpdate />} exact={true} />
+          <Route path='/admin/shows-list' element={<ProtectedRoute isAdmin={true}> <ShowsList /> </ProtectedRoute>} exact={true} />
+          <Route path='/admin/show-create' element={<ProtectedRoute isAdmin={true}> <ShowCreate /> </ProtectedRoute>} exact={true} />
+          <Route path='/admin/show-update/:id' element={<ProtectedRoute isAdmin={true}> <ShowUpdate /> </ProtectedRoute>} exact={true} />
 
-          <Route path='/admin/users-list' element={<UsersList />} exact={true} />
-          <Route path='/admin/user-create' element={<UserCreate />} exact={true} />
-          <Route path='/admin/user-update/:id' element={<UserUpdate />} exact={true} />
+          <Route path='/admin/users-list' element={<ProtectedRoute isAdmin={true}> <UsersList /> </ProtectedRoute>} exact={true} />
+          <Route path='/admin/user-create' element={<ProtectedRoute isAdmin={true}> <UserCreate /> </ProtectedRoute>} exact={true} />
+          <Route path='/admin/user-update/:id' element={<ProtectedRoute isAdmin={true}> <UserUpdate /> </ProtectedRoute>} exact={true} />
 
         </Routes>
         <ToastContainer

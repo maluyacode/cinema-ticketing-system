@@ -3,11 +3,29 @@ const cloudinary = require('cloudinary');
 const ImageCloudinary = require('../utils/ImageCloudinary');
 
 exports.listAllMovies = async (req, res, next) => {
-    const movies = await Movie.find();
-    return res.status(200).json({
-        sucess: true,
-        movies
-    })
+
+    try {
+
+        const { limit } = req.query
+        console.log(req.query)
+        const movieLength = (await Movie.find()).length;
+        const movies = await Movie.find().limit(limit)
+        // const movieLength = allMovies.length
+
+        return res.status(200).json({
+            sucess: true,
+            movies,
+            limit,
+            movieLength
+        })
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Cannot find cinema, don't try to enject`,
+        })
+    }
 }
 
 exports.create = async (req, res, next) => {

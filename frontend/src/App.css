@@ -13,8 +13,8 @@ body {
 }
 
 .App {
-  height: 100vh;
-  background-color: #FAF1E4 !important; 
+  /* height: 100vh; */
+  background-color: #FAF1E4 !important;
 }
 
 .content {
@@ -69,4 +69,39 @@ main.MuiBox-root {
 
 .swal2-popup {
   font-size: medium !important;
+}
+
+.movie-card-list:hover {
+  .show-content {
+    display: block;
+  }
+
+  background-color: rgba(59, 59, 59, 0.699);
+  background-blend-mode: darken;
+
+  .show-content-actions {
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+}
+
+.hide-content {
+  display: none;
+}
+
+.show-content-actions {
+  display: none !important;
+}
+
+.date-picker-container {
+  background-color: #cfc9bf !important;
+}
+
+.dM {
+  width: 90% !important;
+}
+
+.Kq::after {
+  content: none !important;
+  /* or content: ''; */
 }
