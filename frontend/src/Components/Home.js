@@ -54,7 +54,7 @@ const Home = () => {
 
     return (
         <>
-            <Container maxWidth='100vw' disableGutters={true}
+            <Container maxWidth='100vw' className='content' disableGutters={true}
                 sx={{
                     backgroundImage: `url('./images/cinema-bg.jpg')`,
                     height: '100%',
@@ -69,11 +69,12 @@ const Home = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    flexDirection: 'column'
+                    flexDirection: 'column',
+                    paddingBottom: 30
                 }}>
-                <Grid>
-                    <Grid item xs={12} >
-                        <MovieCard movie={movie} />
+                <Grid width='80%'>
+                    <Grid item xs={12} width='100%'>
+                        <MovieCard movie={movie} width='100%' />
                     </Grid >
                     <Grid item xs={12}>
                         <MobileStepper

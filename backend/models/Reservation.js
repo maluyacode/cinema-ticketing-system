@@ -14,12 +14,15 @@ const reservationSchema = new mongoose.Schema({
         required: true
     },
     status: {
+        type: String,
+        required: true,
         enum: {
             values: [
                 'Pending',
                 'Confirmed',
                 'Cancelled'
             ],
+            default: 'Pending'
         }
     },
     user: {

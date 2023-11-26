@@ -26,6 +26,8 @@ import UsersList from 'Components/Admin/User/UsersList';
 import UserCreate from 'Components/Admin/User/UserCreate';
 import UserUpdate from 'Components/Admin/User/UserUpdate';
 import ProtectedRoute from 'utils/ProtectedRoute';
+import ReservationsList from 'Components/Admin/Order/ReservationsList';
+import ReservationUpdate from 'Components/Admin/Order/ReservationUpdate';
 
 const hideHeader = window.location.pathname.startsWith('/admin');
 
@@ -63,6 +65,9 @@ function App() {
           <Route path='/admin/users-list' element={<ProtectedRoute isAdmin={true}> <UsersList /> </ProtectedRoute>} exact={true} />
           <Route path='/admin/user-create' element={<ProtectedRoute isAdmin={true}> <UserCreate /> </ProtectedRoute>} exact={true} />
           <Route path='/admin/user-update/:id' element={<ProtectedRoute isAdmin={true}> <UserUpdate /> </ProtectedRoute>} exact={true} />
+
+          <Route path='/admin/reservations-list/' element={<ProtectedRoute isAdmin={true}> <ReservationsList /> </ProtectedRoute>} exact={true} />
+          <Route path='/admin/reservation-update/:id' element={<ProtectedRoute isAdmin={true}> <ReservationUpdate /> </ProtectedRoute>} exact={true} />
 
         </Routes>
         <ToastContainer

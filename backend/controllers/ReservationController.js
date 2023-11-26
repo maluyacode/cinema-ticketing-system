@@ -7,13 +7,12 @@ const pdfGenerate = require('../utils/pdfGenerate')
 const qrGenerate = require('../utils/qrGenerate');
 const hbs = require('nodemailer-express-handlebars')
 const path = require('path')
-const sendToAdmin = require('../utils/sendToAdmin')
+const sendToAdmin = require('../utils/sendToAdmin');
+const Cinema = require('../models/Cinema');
+const sendToUser = require('../utils/sendToUser')
 
 
 exports.create = async (req, res, next) => {
-
-    // await qrGenerate(req.user);
-    // await pdfGenerate();
 
     // return res.send('email sent')
 
@@ -87,5 +86,143 @@ exports.create = async (req, res, next) => {
         })
     }
 
+
+}
+
+exports.getAllReservations = async (req, res, next) => {
+
+    try {
+        const reservations = await Reservation.find()
+            .populate('user')
+            .populate({
+                path: 'show',
+                populate: { path: 'cinema' },
+                populate: { path: 'movie' }
+            })
+
+        if (!reservations) {
+            return res.status(404).json({
+                success: false,
+                message: 'Reservations not found',
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            reservations
+        })
+
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Cannot find reservations, don't try to enject`,
+        })
+    }
+}
+
+exports.deleteReservation = async (req, res, next) => {
+    try {
+        const { id } = req.params
+
+        await Reservation.findByIdAndDelete(id)
+
+        return res.status(202).json({
+            success: true,
+            message: 'Successfully deleted'
+        })
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Cannot find Reservation, don't try to enject`,
+        })
+    }
+}
+
+exports.getSingleReservation = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+
+        const reservation = await Reservation.findById(id)
+            .populate('user')
+            .populate({
+                path: 'show',
+                populate: [
+                    { path: 'cinema', model: Cinema },
+                    { path: 'movie' }
+                ]
+            })
+        console.log(reservation)
+        if (!reservation) {
+            return res.status(404).json({
+                success: false,
+                message: "Reservation not found",
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            reservation,
+        })
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Cannot find reservation, don't try to enject`,
+        })
+    }
+}
+
+exports.updateReservation = async (req, res, next) => {
+
+    try {
+
+        const { id } = req.params
+        const { status } = req.body
+
+        const reservation = await Reservation.findById(id)
+            .populate('user')
+            .populate({
+                path: 'show',
+                populate: [
+                    { path: 'cinema', model: Cinema },
+                    { path: 'movie', model: Movie }
+                ]
+            })
+
+        if (status === 'Confirmed' && reservation.status === 'Pending') {
+            reservation.status = 'Confirmed'
+            reservation.save();
+            await qrGenerate({ user: reservation.user, reservedSeats: reservation.reserved_seats, reservationId: reservation._id });
+            await sendToUser({
+                subject: `${process.env.APP_NAME}`,
+                message: 'Testing - Skusta Clee',
+                reservation,
+            })
+        }
+
+        if (!reservation) {
+            return res.status(404).json({
+                success: false,
+                message: "Reservation not found",
+            })
+        }
+
+        return res.status(202).json({
+            success: true,
+            // message: `Successfully ${reservation.status}`
+        })
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Cannot find Reservation, don't try to enject`,
+        })
+    }
 
 }

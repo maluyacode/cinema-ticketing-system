@@ -1,0 +1,1220 @@
+{
+    "mostWatchedShows": [
+        {
+            "_id": "6541b2a116ec208a04c21a9d",
+            "title": "Steve Jobs",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. issimos quos aut est?",
+            "release_date": "2010-10-14T00:00:00.000Z",
+            "genre": [
+                "Fantasy"
+            ],
+            "duration": 125,
+            "mtrcb_rating": "NC-17",
+            "language": "English",
+            "director": "Danny Boyle && Adlawan",
+            "cast": [
+                "Michael Fassbender",
+                "WinsletSeth Rogen"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/bqzo4vvargqpmjcerxqz",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463949/movie-ticketing-system/movies/bqzo4vvargqpmjcerxqz.jpg",
+                    "_id": "655b055db6e07a921ab25a55"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tdtlcj2lza1v2nl3ux5l",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463951/movie-ticketing-system/movies/tdtlcj2lza1v2nl3ux5l.jpg",
+                    "_id": "655b055db6e07a921ab25a56"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/l2gu9uomvafp2dbwz4q2",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463953/movie-ticketing-system/movies/l2gu9uomvafp2dbwz4q2.jpg",
+                    "_id": "655b055db6e07a921ab25a57"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tjgwlffxycxaqznjc9gv",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463954/movie-ticketing-system/movies/tjgwlffxycxaqznjc9gv.jpg",
+                    "_id": "655b055db6e07a921ab25a58"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/pjserlsqxih4olmv7rqj",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463956/movie-ticketing-system/movies/pjserlsqxih4olmv7rqj.jpg",
+                    "_id": "655b055db6e07a921ab25a59"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/zix6klgbozcb1zhkmurn",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463957/movie-ticketing-system/movies/zix6klgbozcb1zhkmurn.jpg",
+                    "_id": "655b055db6e07a921ab25a5a"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/dbcgl9hucjyxwc0hr2ge",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463959/movie-ticketing-system/movies/dbcgl9hucjyxwc0hr2ge.jpg",
+                    "_id": "655b055db6e07a921ab25a5b"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/bzngmwyazrvq6njko6p0",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463961/movie-ticketing-system/movies/bzngmwyazrvq6njko6p0.jpg",
+                    "_id": "655b055db6e07a921ab25a5c"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/gdu50rxmtjtwbshudfs8",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463962/movie-ticketing-system/movies/gdu50rxmtjtwbshudfs8.jpg",
+                    "_id": "655b055db6e07a921ab25a5d"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tzmw4hms5x8fbs0xo3zq",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463964/movie-ticketing-system/movies/tzmw4hms5x8fbs0xo3zq.jpg",
+                    "_id": "655b055db6e07a921ab25a5e"
+                }
+            ],
+            "createdAt": "2023-11-01T02:06:25.065Z",
+            "updatedAt": "2023-11-26T07:35:25.828Z",
+            "__v": 0,
+            "shows": {
+                "_id": "6561768ea94fa6fac8d2ead2",
+                "start_time": "2023-11-30T02:00:00.000Z",
+                "end_time": "2023-11-30T03:45:00.000Z",
+                "ticket_price": 300,
+                "all_reserved_seats": [
+                    "B4",
+                    "B5",
+                    "B6",
+                    "B7",
+                    "C4",
+                    "C5",
+                    "D6",
+                    "D5",
+                    "D4",
+                    "C3",
+                    "C6",
+                    "D7",
+                    "E6",
+                    "E5",
+                    "E7",
+                    "E8"
+                ],
+                "is_active": true,
+                "movie": "6541b2a116ec208a04c21a9d",
+                "cinema": "6541b332d3b6470d3aaa5f99",
+                "purchased_tickets": 16,
+                "available_tickets": 60,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/nv5jfjxjukgh7a1qfivz",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700886156/movie-ticketing-system/cinemas/nv5jfjxjukgh7a1qfivz.jpg",
+                        "_id": "6561768ea94fa6fac8d2ead3"
+                    },
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/tf8ybftdlyulahlp1q8a",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700886157/movie-ticketing-system/cinemas/tf8ybftdlyulahlp1q8a.jpg",
+                        "_id": "6561768ea94fa6fac8d2ead4"
+                    }
+                ],
+                "createdAt": "2023-11-25T04:22:38.963Z",
+                "updatedAt": "2023-11-26T05:46:25.692Z",
+                "__v": 5
+            },
+            "reservations": {
+                "_id": "65629ceffcc41689aacb557d",
+                "reserved_seats": [
+                    "C3",
+                    "C6",
+                    "D7"
+                ],
+                "number_of_tickets": 3,
+                "total_price": 960,
+                "status": "Confirmed",
+                "user": "653fb6e2effa9c897a8c1277",
+                "show": "6561768ea94fa6fac8d2ead2",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T01:18:39.521Z",
+                "createdAt": "2023-11-26T01:18:39.538Z",
+                "updatedAt": "2023-11-26T07:56:39.279Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "6541b2a116ec208a04c21a9d",
+            "title": "Steve Jobs",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. issimos quos aut est?",
+            "release_date": "2010-10-14T00:00:00.000Z",
+            "genre": [
+                "Fantasy"
+            ],
+            "duration": 125,
+            "mtrcb_rating": "NC-17",
+            "language": "English",
+            "director": "Danny Boyle && Adlawan",
+            "cast": [
+                "Michael Fassbender",
+                "WinsletSeth Rogen"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/bqzo4vvargqpmjcerxqz",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463949/movie-ticketing-system/movies/bqzo4vvargqpmjcerxqz.jpg",
+                    "_id": "655b055db6e07a921ab25a55"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tdtlcj2lza1v2nl3ux5l",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463951/movie-ticketing-system/movies/tdtlcj2lza1v2nl3ux5l.jpg",
+                    "_id": "655b055db6e07a921ab25a56"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/l2gu9uomvafp2dbwz4q2",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463953/movie-ticketing-system/movies/l2gu9uomvafp2dbwz4q2.jpg",
+                    "_id": "655b055db6e07a921ab25a57"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tjgwlffxycxaqznjc9gv",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463954/movie-ticketing-system/movies/tjgwlffxycxaqznjc9gv.jpg",
+                    "_id": "655b055db6e07a921ab25a58"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/pjserlsqxih4olmv7rqj",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463956/movie-ticketing-system/movies/pjserlsqxih4olmv7rqj.jpg",
+                    "_id": "655b055db6e07a921ab25a59"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/zix6klgbozcb1zhkmurn",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463957/movie-ticketing-system/movies/zix6klgbozcb1zhkmurn.jpg",
+                    "_id": "655b055db6e07a921ab25a5a"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/dbcgl9hucjyxwc0hr2ge",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463959/movie-ticketing-system/movies/dbcgl9hucjyxwc0hr2ge.jpg",
+                    "_id": "655b055db6e07a921ab25a5b"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/bzngmwyazrvq6njko6p0",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463961/movie-ticketing-system/movies/bzngmwyazrvq6njko6p0.jpg",
+                    "_id": "655b055db6e07a921ab25a5c"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/gdu50rxmtjtwbshudfs8",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463962/movie-ticketing-system/movies/gdu50rxmtjtwbshudfs8.jpg",
+                    "_id": "655b055db6e07a921ab25a5d"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tzmw4hms5x8fbs0xo3zq",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463964/movie-ticketing-system/movies/tzmw4hms5x8fbs0xo3zq.jpg",
+                    "_id": "655b055db6e07a921ab25a5e"
+                }
+            ],
+            "createdAt": "2023-11-01T02:06:25.065Z",
+            "updatedAt": "2023-11-26T07:35:25.828Z",
+            "__v": 0,
+            "shows": {
+                "_id": "6561768ea94fa6fac8d2ead2",
+                "start_time": "2023-11-30T02:00:00.000Z",
+                "end_time": "2023-11-30T03:45:00.000Z",
+                "ticket_price": 300,
+                "all_reserved_seats": [
+                    "B4",
+                    "B5",
+                    "B6",
+                    "B7",
+                    "C4",
+                    "C5",
+                    "D6",
+                    "D5",
+                    "D4",
+                    "C3",
+                    "C6",
+                    "D7",
+                    "E6",
+                    "E5",
+                    "E7",
+                    "E8"
+                ],
+                "is_active": true,
+                "movie": "6541b2a116ec208a04c21a9d",
+                "cinema": "6541b332d3b6470d3aaa5f99",
+                "purchased_tickets": 16,
+                "available_tickets": 60,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/nv5jfjxjukgh7a1qfivz",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700886156/movie-ticketing-system/cinemas/nv5jfjxjukgh7a1qfivz.jpg",
+                        "_id": "6561768ea94fa6fac8d2ead3"
+                    },
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/tf8ybftdlyulahlp1q8a",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700886157/movie-ticketing-system/cinemas/tf8ybftdlyulahlp1q8a.jpg",
+                        "_id": "6561768ea94fa6fac8d2ead4"
+                    }
+                ],
+                "createdAt": "2023-11-25T04:22:38.963Z",
+                "updatedAt": "2023-11-26T05:46:25.692Z",
+                "__v": 5
+            },
+            "reservations": {
+                "_id": "6562dbb14f1dd25f97d3fbc5",
+                "reserved_seats": [
+                    "E6",
+                    "E5",
+                    "E7",
+                    "E8"
+                ],
+                "number_of_tickets": 4,
+                "total_price": 1280,
+                "status": "Confirmed",
+                "user": "6560cea2ad0c0e1c33b64986",
+                "show": "6561768ea94fa6fac8d2ead2",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:46:25.656Z",
+                "createdAt": "2023-11-26T05:46:25.674Z",
+                "updatedAt": "2023-11-26T07:57:36.515Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "6541b2a116ec208a04c21a9d",
+            "title": "Steve Jobs",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. issimos quos aut est?",
+            "release_date": "2010-10-14T00:00:00.000Z",
+            "genre": [
+                "Fantasy"
+            ],
+            "duration": 125,
+            "mtrcb_rating": "NC-17",
+            "language": "English",
+            "director": "Danny Boyle && Adlawan",
+            "cast": [
+                "Michael Fassbender",
+                "WinsletSeth Rogen"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/bqzo4vvargqpmjcerxqz",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463949/movie-ticketing-system/movies/bqzo4vvargqpmjcerxqz.jpg",
+                    "_id": "655b055db6e07a921ab25a55"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tdtlcj2lza1v2nl3ux5l",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463951/movie-ticketing-system/movies/tdtlcj2lza1v2nl3ux5l.jpg",
+                    "_id": "655b055db6e07a921ab25a56"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/l2gu9uomvafp2dbwz4q2",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463953/movie-ticketing-system/movies/l2gu9uomvafp2dbwz4q2.jpg",
+                    "_id": "655b055db6e07a921ab25a57"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tjgwlffxycxaqznjc9gv",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463954/movie-ticketing-system/movies/tjgwlffxycxaqznjc9gv.jpg",
+                    "_id": "655b055db6e07a921ab25a58"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/pjserlsqxih4olmv7rqj",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463956/movie-ticketing-system/movies/pjserlsqxih4olmv7rqj.jpg",
+                    "_id": "655b055db6e07a921ab25a59"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/zix6klgbozcb1zhkmurn",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463957/movie-ticketing-system/movies/zix6klgbozcb1zhkmurn.jpg",
+                    "_id": "655b055db6e07a921ab25a5a"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/dbcgl9hucjyxwc0hr2ge",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463959/movie-ticketing-system/movies/dbcgl9hucjyxwc0hr2ge.jpg",
+                    "_id": "655b055db6e07a921ab25a5b"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/bzngmwyazrvq6njko6p0",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463961/movie-ticketing-system/movies/bzngmwyazrvq6njko6p0.jpg",
+                    "_id": "655b055db6e07a921ab25a5c"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/gdu50rxmtjtwbshudfs8",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463962/movie-ticketing-system/movies/gdu50rxmtjtwbshudfs8.jpg",
+                    "_id": "655b055db6e07a921ab25a5d"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/tzmw4hms5x8fbs0xo3zq",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700463964/movie-ticketing-system/movies/tzmw4hms5x8fbs0xo3zq.jpg",
+                    "_id": "655b055db6e07a921ab25a5e"
+                }
+            ],
+            "createdAt": "2023-11-01T02:06:25.065Z",
+            "updatedAt": "2023-11-26T07:35:25.828Z",
+            "__v": 0,
+            "shows": {
+                "_id": "656176e5a94fa6fac8d2ec10",
+                "start_time": "2023-11-29T23:00:00.000Z",
+                "end_time": "2023-11-30T01:00:00.000Z",
+                "ticket_price": 500,
+                "all_reserved_seats": [
+                    "C6",
+                    "C4",
+                    "C3",
+                    "C5",
+                    "D5",
+                    "D6",
+                    "D4",
+                    "B4",
+                    "E5",
+                    "E6",
+                    "E7",
+                    "E8",
+                    "F8",
+                    "F7",
+                    "B5",
+                    "B3",
+                    "C2",
+                    "D3",
+                    "E4",
+                    "F6",
+                    "D7",
+                    "D8",
+                    "F9",
+                    "F10",
+                    "C8",
+                    "B8",
+                    "B7",
+                    "B9"
+                ],
+                "is_active": true,
+                "movie": "6541b2a116ec208a04c21a9d",
+                "cinema": "6541b332d3b6470d3aaa5f99",
+                "purchased_tickets": 28,
+                "available_tickets": 48,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/qx0ushtgllewn6qhzjje",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700886242/movie-ticketing-system/cinemas/qx0ushtgllewn6qhzjje.jpg",
+                        "_id": "656176e5a94fa6fac8d2ec11"
+                    },
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/dnfn2w8ul4sbrzom0uwb",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700886244/movie-ticketing-system/cinemas/dnfn2w8ul4sbrzom0uwb.jpg",
+                        "_id": "656176e5a94fa6fac8d2ec12"
+                    }
+                ],
+                "createdAt": "2023-11-25T04:24:05.063Z",
+                "updatedAt": "2023-11-26T05:32:09.443Z",
+                "__v": 7
+            },
+            "reservations": {
+                "_id": "6562d85974ee1e5e8e243253",
+                "reserved_seats": [
+                    "C8",
+                    "B8",
+                    "B7",
+                    "B9"
+                ],
+                "number_of_tickets": 4,
+                "total_price": 2080,
+                "status": "Confirmed",
+                "user": "6560cea2ad0c0e1c33b64986",
+                "show": "656176e5a94fa6fac8d2ec10",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:32:09.413Z",
+                "createdAt": "2023-11-26T05:32:09.426Z",
+                "updatedAt": "2023-11-26T06:11:10.423Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "65466439996158240edc979f",
+            "title": "The Adventure Begins",
+            "description": "Follow a group of explorers on an epic journey to uncover hidden treasures.",
+            "release_date": "2010-10-03T00:00:00.000Z",
+            "genre": [
+                "Adventure"
+            ],
+            "duration": 140,
+            "mtrcb_rating": "R",
+            "language": "English",
+            "director": "John Smith",
+            "cast": [
+                "Jane Doe",
+                "Emily Johnson"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/z7jvqnr5wt1zfynrsvnz",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880875/movie-ticketing-system/movies/z7jvqnr5wt1zfynrsvnz.jpg",
+                    "_id": "656161eea94fa6fac8d2b298"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/hvlvhbgikcgdbnoyfhcr",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880877/movie-ticketing-system/movies/hvlvhbgikcgdbnoyfhcr.jpg",
+                    "_id": "656161eea94fa6fac8d2b299"
+                }
+            ],
+            "createdAt": "2023-11-04T15:33:13.472Z",
+            "updatedAt": "2023-11-25T03:07:13.872Z",
+            "__v": 0,
+            "shows": {
+                "_id": "65432e9f309c596ae3cc3dfd",
+                "start_time": "2023-11-29T00:30:00.000Z",
+                "end_time": "2023-11-29T03:30:00.000Z",
+                "ticket_price": 2000,
+                "all_reserved_seats": [
+                    "E6",
+                    "E7",
+                    "E8",
+                    "F5",
+                    "D8",
+                    "F6",
+                    "F7",
+                    "G7",
+                    "G6",
+                    "G5",
+                    "D9",
+                    "D11",
+                    "E10",
+                    "D10",
+                    "A0",
+                    "A1",
+                    "A2",
+                    "A3",
+                    "B4",
+                    "B5",
+                    "A4",
+                    "A5",
+                    "B6",
+                    "C4"
+                ],
+                "is_active": true,
+                "movie": "65466439996158240edc979f",
+                "cinema": "655c42ac9e1ae793084ac271",
+                "purchased_tickets": 24,
+                "available_tickets": 102,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/wwkfjztwjozvmdwbyjby",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880836/movie-ticketing-system/cinemas/wwkfjztwjozvmdwbyjby.jpg",
+                        "_id": "656161c7a94fa6fac8d2b1a3"
+                    },
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/kegyfnng8gvzriwsspdh",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880838/movie-ticketing-system/cinemas/kegyfnng8gvzriwsspdh.jpg",
+                        "_id": "656161c7a94fa6fac8d2b1a4"
+                    }
+                ],
+                "createdAt": "2023-11-02T05:07:43.515Z",
+                "updatedAt": "2023-11-26T05:38:41.378Z",
+                "__v": 22
+            },
+            "reservations": {
+                "_id": "6562d38ba44721dc5808beea",
+                "reserved_seats": [
+                    "F6",
+                    "F7",
+                    "G7",
+                    "G6",
+                    "G5"
+                ],
+                "number_of_tickets": 5,
+                "total_price": 10100,
+                "status": "Confirmed",
+                "user": "6560ce5dad0c0e1c33b6497e",
+                "show": "65432e9f309c596ae3cc3dfd",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:11:39.821Z",
+                "createdAt": "2023-11-26T05:11:39.826Z",
+                "updatedAt": "2023-11-26T06:20:43.682Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "65466439996158240edc979f",
+            "title": "The Adventure Begins",
+            "description": "Follow a group of explorers on an epic journey to uncover hidden treasures.",
+            "release_date": "2010-10-03T00:00:00.000Z",
+            "genre": [
+                "Adventure"
+            ],
+            "duration": 140,
+            "mtrcb_rating": "R",
+            "language": "English",
+            "director": "John Smith",
+            "cast": [
+                "Jane Doe",
+                "Emily Johnson"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/z7jvqnr5wt1zfynrsvnz",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880875/movie-ticketing-system/movies/z7jvqnr5wt1zfynrsvnz.jpg",
+                    "_id": "656161eea94fa6fac8d2b298"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/hvlvhbgikcgdbnoyfhcr",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880877/movie-ticketing-system/movies/hvlvhbgikcgdbnoyfhcr.jpg",
+                    "_id": "656161eea94fa6fac8d2b299"
+                }
+            ],
+            "createdAt": "2023-11-04T15:33:13.472Z",
+            "updatedAt": "2023-11-25T03:07:13.872Z",
+            "__v": 0,
+            "shows": {
+                "_id": "65432e9f309c596ae3cc3dfd",
+                "start_time": "2023-11-29T00:30:00.000Z",
+                "end_time": "2023-11-29T03:30:00.000Z",
+                "ticket_price": 2000,
+                "all_reserved_seats": [
+                    "E6",
+                    "E7",
+                    "E8",
+                    "F5",
+                    "D8",
+                    "F6",
+                    "F7",
+                    "G7",
+                    "G6",
+                    "G5",
+                    "D9",
+                    "D11",
+                    "E10",
+                    "D10",
+                    "A0",
+                    "A1",
+                    "A2",
+                    "A3",
+                    "B4",
+                    "B5",
+                    "A4",
+                    "A5",
+                    "B6",
+                    "C4"
+                ],
+                "is_active": true,
+                "movie": "65466439996158240edc979f",
+                "cinema": "655c42ac9e1ae793084ac271",
+                "purchased_tickets": 24,
+                "available_tickets": 102,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/wwkfjztwjozvmdwbyjby",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880836/movie-ticketing-system/cinemas/wwkfjztwjozvmdwbyjby.jpg",
+                        "_id": "656161c7a94fa6fac8d2b1a3"
+                    },
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/kegyfnng8gvzriwsspdh",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880838/movie-ticketing-system/cinemas/kegyfnng8gvzriwsspdh.jpg",
+                        "_id": "656161c7a94fa6fac8d2b1a4"
+                    }
+                ],
+                "createdAt": "2023-11-02T05:07:43.515Z",
+                "updatedAt": "2023-11-26T05:38:41.378Z",
+                "__v": 22
+            },
+            "reservations": {
+                "_id": "6562d5d2f488e3b36d19d19d",
+                "reserved_seats": [
+                    "D9",
+                    "D11",
+                    "E10",
+                    "D10"
+                ],
+                "number_of_tickets": 4,
+                "total_price": 8080,
+                "status": "Confirmed",
+                "user": "6560cea2ad0c0e1c33b64986",
+                "show": "65432e9f309c596ae3cc3dfd",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:21:22.693Z",
+                "createdAt": "2023-11-26T05:21:22.716Z",
+                "updatedAt": "2023-11-26T05:21:34.374Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "65466439996158240edc979f",
+            "title": "The Adventure Begins",
+            "description": "Follow a group of explorers on an epic journey to uncover hidden treasures.",
+            "release_date": "2010-10-03T00:00:00.000Z",
+            "genre": [
+                "Adventure"
+            ],
+            "duration": 140,
+            "mtrcb_rating": "R",
+            "language": "English",
+            "director": "John Smith",
+            "cast": [
+                "Jane Doe",
+                "Emily Johnson"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/z7jvqnr5wt1zfynrsvnz",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880875/movie-ticketing-system/movies/z7jvqnr5wt1zfynrsvnz.jpg",
+                    "_id": "656161eea94fa6fac8d2b298"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/hvlvhbgikcgdbnoyfhcr",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880877/movie-ticketing-system/movies/hvlvhbgikcgdbnoyfhcr.jpg",
+                    "_id": "656161eea94fa6fac8d2b299"
+                }
+            ],
+            "createdAt": "2023-11-04T15:33:13.472Z",
+            "updatedAt": "2023-11-25T03:07:13.872Z",
+            "__v": 0,
+            "shows": {
+                "_id": "65432e9f309c596ae3cc3dfd",
+                "start_time": "2023-11-29T00:30:00.000Z",
+                "end_time": "2023-11-29T03:30:00.000Z",
+                "ticket_price": 2000,
+                "all_reserved_seats": [
+                    "E6",
+                    "E7",
+                    "E8",
+                    "F5",
+                    "D8",
+                    "F6",
+                    "F7",
+                    "G7",
+                    "G6",
+                    "G5",
+                    "D9",
+                    "D11",
+                    "E10",
+                    "D10",
+                    "A0",
+                    "A1",
+                    "A2",
+                    "A3",
+                    "B4",
+                    "B5",
+                    "A4",
+                    "A5",
+                    "B6",
+                    "C4"
+                ],
+                "is_active": true,
+                "movie": "65466439996158240edc979f",
+                "cinema": "655c42ac9e1ae793084ac271",
+                "purchased_tickets": 24,
+                "available_tickets": 102,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/wwkfjztwjozvmdwbyjby",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880836/movie-ticketing-system/cinemas/wwkfjztwjozvmdwbyjby.jpg",
+                        "_id": "656161c7a94fa6fac8d2b1a3"
+                    },
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/kegyfnng8gvzriwsspdh",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880838/movie-ticketing-system/cinemas/kegyfnng8gvzriwsspdh.jpg",
+                        "_id": "656161c7a94fa6fac8d2b1a4"
+                    }
+                ],
+                "createdAt": "2023-11-02T05:07:43.515Z",
+                "updatedAt": "2023-11-26T05:38:41.378Z",
+                "__v": 22
+            },
+            "reservations": {
+                "_id": "6562d96a5aa219c6e46b540b",
+                "reserved_seats": [
+                    "A0",
+                    "A1",
+                    "A2"
+                ],
+                "number_of_tickets": 3,
+                "total_price": 6060,
+                "status": "Confirmed",
+                "user": "6560cea2ad0c0e1c33b64986",
+                "show": "65432e9f309c596ae3cc3dfd",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:36:42.067Z",
+                "createdAt": "2023-11-26T05:36:42.087Z",
+                "updatedAt": "2023-11-26T07:55:27.875Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "65466439996158240edc979f",
+            "title": "The Adventure Begins",
+            "description": "Follow a group of explorers on an epic journey to uncover hidden treasures.",
+            "release_date": "2010-10-03T00:00:00.000Z",
+            "genre": [
+                "Adventure"
+            ],
+            "duration": 140,
+            "mtrcb_rating": "R",
+            "language": "English",
+            "director": "John Smith",
+            "cast": [
+                "Jane Doe",
+                "Emily Johnson"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/z7jvqnr5wt1zfynrsvnz",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880875/movie-ticketing-system/movies/z7jvqnr5wt1zfynrsvnz.jpg",
+                    "_id": "656161eea94fa6fac8d2b298"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/hvlvhbgikcgdbnoyfhcr",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880877/movie-ticketing-system/movies/hvlvhbgikcgdbnoyfhcr.jpg",
+                    "_id": "656161eea94fa6fac8d2b299"
+                }
+            ],
+            "createdAt": "2023-11-04T15:33:13.472Z",
+            "updatedAt": "2023-11-25T03:07:13.872Z",
+            "__v": 0,
+            "shows": {
+                "_id": "65432e9f309c596ae3cc3dfd",
+                "start_time": "2023-11-29T00:30:00.000Z",
+                "end_time": "2023-11-29T03:30:00.000Z",
+                "ticket_price": 2000,
+                "all_reserved_seats": [
+                    "E6",
+                    "E7",
+                    "E8",
+                    "F5",
+                    "D8",
+                    "F6",
+                    "F7",
+                    "G7",
+                    "G6",
+                    "G5",
+                    "D9",
+                    "D11",
+                    "E10",
+                    "D10",
+                    "A0",
+                    "A1",
+                    "A2",
+                    "A3",
+                    "B4",
+                    "B5",
+                    "A4",
+                    "A5",
+                    "B6",
+                    "C4"
+                ],
+                "is_active": true,
+                "movie": "65466439996158240edc979f",
+                "cinema": "655c42ac9e1ae793084ac271",
+                "purchased_tickets": 24,
+                "available_tickets": 102,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/wwkfjztwjozvmdwbyjby",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880836/movie-ticketing-system/cinemas/wwkfjztwjozvmdwbyjby.jpg",
+                        "_id": "656161c7a94fa6fac8d2b1a3"
+                    },
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/kegyfnng8gvzriwsspdh",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700880838/movie-ticketing-system/cinemas/kegyfnng8gvzriwsspdh.jpg",
+                        "_id": "656161c7a94fa6fac8d2b1a4"
+                    }
+                ],
+                "createdAt": "2023-11-02T05:07:43.515Z",
+                "updatedAt": "2023-11-26T05:38:41.378Z",
+                "__v": 22
+            },
+            "reservations": {
+                "_id": "6562d9e15aa219c6e46b56fc",
+                "reserved_seats": [
+                    "A3",
+                    "B4",
+                    "B5",
+                    "A4",
+                    "A5",
+                    "B6",
+                    "C4"
+                ],
+                "number_of_tickets": 7,
+                "total_price": 14140,
+                "status": "Confirmed",
+                "user": "6560cea2ad0c0e1c33b64986",
+                "show": "65432e9f309c596ae3cc3dfd",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:38:41.342Z",
+                "createdAt": "2023-11-26T05:38:41.357Z",
+                "updatedAt": "2023-11-26T07:56:48.276Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "65466522996158240edc97af",
+            "title": "The Detective's Dilemma",
+            "description": "A brilliant detective tries to solve a complex murder case.",
+            "release_date": "2010-10-03T01:33:50.340Z",
+            "genre": [
+                "Crime"
+            ],
+            "duration": 125,
+            "mtrcb_rating": "PG-13",
+            "language": "English",
+            "director": "Michael Anderson",
+            "cast": [
+                "Robert Johnson",
+                "Susan Davis"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/sskoptpvvpdsplldc6kc",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1699112224/movie-ticketing-system/movies/sskoptpvvpdsplldc6kc.jpg",
+                    "_id": "65466522996158240edc97b0"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/yv9l9dfduyrl1yo8szvk",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1699112226/movie-ticketing-system/movies/yv9l9dfduyrl1yo8szvk.jpg",
+                    "_id": "65466522996158240edc97b1"
+                }
+            ],
+            "createdAt": "2023-11-04T15:37:06.442Z",
+            "updatedAt": "2023-11-04T15:37:06.442Z",
+            "__v": 0,
+            "shows": {
+                "_id": "65605014fb9a64e908af965f",
+                "start_time": "2023-11-29T04:45:00.000Z",
+                "end_time": "2023-11-29T07:00:00.000Z",
+                "ticket_price": 350,
+                "all_reserved_seats": [
+                    "D7",
+                    "D8",
+                    "E8",
+                    "E7"
+                ],
+                "is_active": true,
+                "movie": "65466522996158240edc97af",
+                "cinema": "655c42ac9e1ae793084ac271",
+                "purchased_tickets": 4,
+                "available_tickets": 122,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/dlyy6whbxfozow0szcl1",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700810770/movie-ticketing-system/cinemas/dlyy6whbxfozow0szcl1.jpg",
+                        "_id": "65605014fb9a64e908af9660"
+                    },
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/wtcq5tjwcpngdyrzncbv",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700810772/movie-ticketing-system/cinemas/wtcq5tjwcpngdyrzncbv.jpg",
+                        "_id": "65605014fb9a64e908af9661"
+                    }
+                ],
+                "createdAt": "2023-11-24T07:26:12.830Z",
+                "updatedAt": "2023-11-26T05:17:29.345Z",
+                "__v": 1
+            },
+            "reservations": {
+                "_id": "6562d4e9dee749d31a0357f3",
+                "reserved_seats": [
+                    "D7",
+                    "D8",
+                    "E8",
+                    "E7"
+                ],
+                "number_of_tickets": 4,
+                "total_price": 1480,
+                "status": "Confirmed",
+                "user": "6560cea2ad0c0e1c33b64986",
+                "show": "65605014fb9a64e908af965f",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:17:29.306Z",
+                "createdAt": "2023-11-26T05:17:29.327Z",
+                "updatedAt": "2023-11-26T06:24:37.281Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "65466522996158240edc97af",
+            "title": "The Detective's Dilemma",
+            "description": "A brilliant detective tries to solve a complex murder case.",
+            "release_date": "2010-10-03T01:33:50.340Z",
+            "genre": [
+                "Crime"
+            ],
+            "duration": 125,
+            "mtrcb_rating": "PG-13",
+            "language": "English",
+            "director": "Michael Anderson",
+            "cast": [
+                "Robert Johnson",
+                "Susan Davis"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/sskoptpvvpdsplldc6kc",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1699112224/movie-ticketing-system/movies/sskoptpvvpdsplldc6kc.jpg",
+                    "_id": "65466522996158240edc97b0"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/yv9l9dfduyrl1yo8szvk",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1699112226/movie-ticketing-system/movies/yv9l9dfduyrl1yo8szvk.jpg",
+                    "_id": "65466522996158240edc97b1"
+                }
+            ],
+            "createdAt": "2023-11-04T15:37:06.442Z",
+            "updatedAt": "2023-11-04T15:37:06.442Z",
+            "__v": 0,
+            "shows": {
+                "_id": "656055bafb9a64e908afa6a5",
+                "start_time": "2023-11-29T08:45:00.000Z",
+                "end_time": "2023-11-29T12:30:00.000Z",
+                "ticket_price": 300,
+                "all_reserved_seats": [
+                    "D6",
+                    "D7",
+                    "C6",
+                    "C5",
+                    "C4",
+                    "C3",
+                    "D4",
+                    "D3",
+                    "B5",
+                    "B6",
+                    "D5",
+                    "E6"
+                ],
+                "is_active": true,
+                "movie": "65466522996158240edc97af",
+                "cinema": "6541b332d3b6470d3aaa5f99",
+                "purchased_tickets": 12,
+                "available_tickets": 64,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/eqa7abw2iyrigqyj3mzo",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700812217/movie-ticketing-system/cinemas/eqa7abw2iyrigqyj3mzo.jpg",
+                        "_id": "656055bafb9a64e908afa6a6"
+                    }
+                ],
+                "createdAt": "2023-11-24T07:50:18.329Z",
+                "updatedAt": "2023-11-26T07:52:34.417Z",
+                "__v": 3
+            },
+            "reservations": {
+                "_id": "6562d2c6a44721dc5808bd7f",
+                "reserved_seats": [
+                    "D6",
+                    "D7",
+                    "C6",
+                    "C5",
+                    "C4"
+                ],
+                "number_of_tickets": 5,
+                "total_price": 1600,
+                "status": "Confirmed",
+                "user": "6560cea2ad0c0e1c33b64986",
+                "show": "656055bafb9a64e908afa6a5",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:08:22.469Z",
+                "createdAt": "2023-11-26T05:08:22.478Z",
+                "updatedAt": "2023-11-26T06:20:10.376Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "65466522996158240edc97af",
+            "title": "The Detective's Dilemma",
+            "description": "A brilliant detective tries to solve a complex murder case.",
+            "release_date": "2010-10-03T01:33:50.340Z",
+            "genre": [
+                "Crime"
+            ],
+            "duration": 125,
+            "mtrcb_rating": "PG-13",
+            "language": "English",
+            "director": "Michael Anderson",
+            "cast": [
+                "Robert Johnson",
+                "Susan Davis"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/sskoptpvvpdsplldc6kc",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1699112224/movie-ticketing-system/movies/sskoptpvvpdsplldc6kc.jpg",
+                    "_id": "65466522996158240edc97b0"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/yv9l9dfduyrl1yo8szvk",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1699112226/movie-ticketing-system/movies/yv9l9dfduyrl1yo8szvk.jpg",
+                    "_id": "65466522996158240edc97b1"
+                }
+            ],
+            "createdAt": "2023-11-04T15:37:06.442Z",
+            "updatedAt": "2023-11-04T15:37:06.442Z",
+            "__v": 0,
+            "shows": {
+                "_id": "656055bafb9a64e908afa6a5",
+                "start_time": "2023-11-29T08:45:00.000Z",
+                "end_time": "2023-11-29T12:30:00.000Z",
+                "ticket_price": 300,
+                "all_reserved_seats": [
+                    "D6",
+                    "D7",
+                    "C6",
+                    "C5",
+                    "C4",
+                    "C3",
+                    "D4",
+                    "D3",
+                    "B5",
+                    "B6",
+                    "D5",
+                    "E6"
+                ],
+                "is_active": true,
+                "movie": "65466522996158240edc97af",
+                "cinema": "6541b332d3b6470d3aaa5f99",
+                "purchased_tickets": 12,
+                "available_tickets": 64,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/eqa7abw2iyrigqyj3mzo",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700812217/movie-ticketing-system/cinemas/eqa7abw2iyrigqyj3mzo.jpg",
+                        "_id": "656055bafb9a64e908afa6a6"
+                    }
+                ],
+                "createdAt": "2023-11-24T07:50:18.329Z",
+                "updatedAt": "2023-11-26T07:52:34.417Z",
+                "__v": 3
+            },
+            "reservations": {
+                "_id": "6562d6b504b741d7ab333c1b",
+                "reserved_seats": [
+                    "C3",
+                    "D4",
+                    "D3"
+                ],
+                "number_of_tickets": 3,
+                "total_price": 960,
+                "status": "Confirmed",
+                "user": "6560cea2ad0c0e1c33b64986",
+                "show": "656055bafb9a64e908afa6a5",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T05:25:09.343Z",
+                "createdAt": "2023-11-26T05:25:09.359Z",
+                "updatedAt": "2023-11-26T05:25:15.766Z",
+                "__v": 0
+            }
+        },
+        {
+            "_id": "65466522996158240edc97af",
+            "title": "The Detective's Dilemma",
+            "description": "A brilliant detective tries to solve a complex murder case.",
+            "release_date": "2010-10-03T01:33:50.340Z",
+            "genre": [
+                "Crime"
+            ],
+            "duration": 125,
+            "mtrcb_rating": "PG-13",
+            "language": "English",
+            "director": "Michael Anderson",
+            "cast": [
+                "Robert Johnson",
+                "Susan Davis"
+            ],
+            "images": [
+                {
+                    "public_id": "movie-ticketing-system/movies/sskoptpvvpdsplldc6kc",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1699112224/movie-ticketing-system/movies/sskoptpvvpdsplldc6kc.jpg",
+                    "_id": "65466522996158240edc97b0"
+                },
+                {
+                    "public_id": "movie-ticketing-system/movies/yv9l9dfduyrl1yo8szvk",
+                    "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1699112226/movie-ticketing-system/movies/yv9l9dfduyrl1yo8szvk.jpg",
+                    "_id": "65466522996158240edc97b1"
+                }
+            ],
+            "createdAt": "2023-11-04T15:37:06.442Z",
+            "updatedAt": "2023-11-04T15:37:06.442Z",
+            "__v": 0,
+            "shows": {
+                "_id": "656055bafb9a64e908afa6a5",
+                "start_time": "2023-11-29T08:45:00.000Z",
+                "end_time": "2023-11-29T12:30:00.000Z",
+                "ticket_price": 300,
+                "all_reserved_seats": [
+                    "D6",
+                    "D7",
+                    "C6",
+                    "C5",
+                    "C4",
+                    "C3",
+                    "D4",
+                    "D3",
+                    "B5",
+                    "B6",
+                    "D5",
+                    "E6"
+                ],
+                "is_active": true,
+                "movie": "65466522996158240edc97af",
+                "cinema": "6541b332d3b6470d3aaa5f99",
+                "purchased_tickets": 12,
+                "available_tickets": 64,
+                "images": [
+                    {
+                        "public_id": "movie-ticketing-system/cinemas/eqa7abw2iyrigqyj3mzo",
+                        "url": "https://res.cloudinary.com/dzyv6cl5r/image/upload/v1700812217/movie-ticketing-system/cinemas/eqa7abw2iyrigqyj3mzo.jpg",
+                        "_id": "656055bafb9a64e908afa6a6"
+                    }
+                ],
+                "createdAt": "2023-11-24T07:50:18.329Z",
+                "updatedAt": "2023-11-26T07:52:34.417Z",
+                "__v": 3
+            },
+            "reservations": {
+                "_id": "6562f942a46114d6de84fd9d",
+                "reserved_seats": [
+                    "B5",
+                    "B6",
+                    "D5",
+                    "E6"
+                ],
+                "number_of_tickets": 4,
+                "total_price": 1280,
+                "status": "Confirmed",
+                "user": "6562f7a6ec1c7053f811b9fb",
+                "show": "656055bafb9a64e908afa6a5",
+                "payment_method": "credit card",
+                "payment_info": {
+                    "id": "7_sadouh89h89yn8y998hbiug87ogF",
+                    "status": "succeded"
+                },
+                "paid_at": "2023-11-26T07:52:34.393Z",
+                "createdAt": "2023-11-26T07:52:34.404Z",
+                "updatedAt": "2023-11-26T07:54:15.650Z",
+                "__v": 0
+            }
+        }
+    ]
+}

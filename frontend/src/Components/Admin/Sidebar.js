@@ -153,24 +153,26 @@ export default function Sidebar() {
                         </ListItem>
                     </LinkRouter>
                     <ListItem key={'Reservations'} disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
+                        <LinkRouter to='/admin/reservations-list' style={{ textDecoration: "none", color: 'inherit' }}>
+                            <ListItemButton
                                 sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
+                                    minHeight: 48,
+                                    justifyContent: open ? 'initial' : 'center',
+                                    px: 2.5,
                                 }}
                             >
-                                <EventSeat sx={{ color: '#2a4d4e' }} />
-                            </ListItemIcon>
-                            <ListItemText primary={'Reservations'} sx={{ opacity: open ? 1 : 0, fontWeight: '600' }} />
-                        </ListItemButton>
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : 'auto',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <EventSeat sx={{ color: '#2a4d4e' }} />
+                                </ListItemIcon>
+                                <ListItemText primary={'Reservations'} sx={{ opacity: open ? 1 : 0, fontWeight: '600' }} />
+                            </ListItemButton>
+                        </LinkRouter>
                     </ListItem>
                     <LinkRouter to='/admin/shows-list' style={{ textDecoration: "none", color: 'inherit' }}>
                         <ListItem key={'Shows'} disablePadding sx={{ display: 'block' }}>
