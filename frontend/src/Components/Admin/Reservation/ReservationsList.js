@@ -60,11 +60,12 @@ const ReservationsList = () => {
     const listAllReservations = async () => {
         try {
             const { data: { reservations } } = await axios.get(`${process.env.REACT_APP_API}/api/v1/reservation/list-all`, config)
+            console.log(reservations)
             setReservations(reservations);
             getReservationsList(reservations)
         } catch ({ response }) {
             console.log(response)
-            Toast.error(response.data.message);
+            // Toast.error(response.data.message);
         }
     }
 
@@ -180,8 +181,26 @@ const ReservationsList = () => {
         reservations.forEach(reservation => {
             data.push({
                 id: reservation._id,
-                userName: reservation.user.name,
-                userEmail: reservation.user.email,
+                userName: reservation.user ? reservation.user.name : <Typography sx={{
+                    fontWeight: 600,
+                    fontSize: 15,
+                    color: 'white',
+                    borderRadius: 4,
+                    backgroundColor: 'red'
+                }}
+                >
+                    Account Deleted
+                </Typography >,
+                userEmail: reservation.user ? reservation.user.email : <Typography sx={{
+                    fontWeight: 600,
+                    fontSize: 15,
+                    color: 'white',
+                    borderRadius: 4,
+                    backgroundColor: 'red'
+                }}
+                >
+                    Account Deleted
+                </Typography >,
                 numOfTickets: reservation.number_of_tickets,
                 totalPrice: '₱' + reservation.total_price,
                 show: reservation.show,

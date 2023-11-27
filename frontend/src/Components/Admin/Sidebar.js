@@ -18,7 +18,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Dashboard, EventSeat, LocalConvenienceStore, MovieFilter, People, SmartDisplay } from '@mui/icons-material';
+import { Dashboard, EventSeat, LocalConvenienceStore, Logout, MovieFilter, People, SmartDisplay } from '@mui/icons-material';
 import { Link as LinkRouter } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -262,6 +262,29 @@ export default function Sidebar() {
                                     <People sx={{ color: '#2a4d4e' }} />
                                 </ListItemIcon>
                                 <ListItemText primary={'Users'} sx={{ opacity: open ? 1 : 0 }} />
+                            </ListItemButton>
+                        </LinkRouter>
+                    </ListItem>
+                    <Divider />
+                    <ListItem key={'Cinemas'} disablePadding sx={{ display: 'block' }}>
+                        <LinkRouter to='/' style={{ textDecoration: "none", color: 'inherit' }}>
+                            <ListItemButton
+                                sx={{
+                                    minHeight: 48,
+                                    justifyContent: open ? 'initial' : 'center',
+                                    px: 2.5,
+                                }}
+                            >
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : 'auto',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <Logout sx={{ color: '#2a4d4e' }} />
+                                </ListItemIcon>
+                                <ListItemText primary={'Leave'} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
                         </LinkRouter>
                     </ListItem>

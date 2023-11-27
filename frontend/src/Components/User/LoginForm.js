@@ -42,7 +42,7 @@ export function LoginForm({ handleSubmit, handleChange, loading }) {
         <ButtonCircularProgress
             loading={loading}
             text="Sign In" />
-        <Grid container>
+        <Grid container sx={{ mt: -2, px: 2 }}>
             <Grid item xs>
                 <Link to="/forgot/password"
                     component={LinkRouter} variant="body2" sx={{

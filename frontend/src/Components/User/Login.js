@@ -96,18 +96,20 @@ export default function Login() {
         <Container component="main" className='content'>
             <Paper
                 sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    p: 10,
-                    width: '100%',
+                    // display: "flex",
+                    // flexDirection: "column",
+                    // alignItems: "center",
+                    p: 4,
+                    // px: 10,
+                    // width: '100%',
                     maxWidth: '500px',
                     margin: 'auto',
-                    mt: 2,
-                    borderRadius: 5
+                    borderRadius: 5,
+                    mt: 5,
+                    mb: 8
                 }}
             >
-                <Typography component="h1" variant="h5">
+                <Typography component="h1" variant="h5" textAlign={'center'}>
                     Sign in
                 </Typography>
                 <LoginForm

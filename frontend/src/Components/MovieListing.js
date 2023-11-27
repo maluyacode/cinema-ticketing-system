@@ -45,7 +45,6 @@ export default function MovieListing() {
 
     const fetchMoreData = async () => {
         setLimit((prev) => prev + 3);
-
         try {
             const { data: { movies, movieLength } } = await axios.get(`${process.env.REACT_APP_API}/api/v1/movie//list-all?limit=${limit}`, config)
             setMovies(movies);
@@ -57,7 +56,9 @@ export default function MovieListing() {
     };
 
     useEffect(() => {
+
         fetchMoreData()
+
     }, [])
     console.log(limitLength)
 

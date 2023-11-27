@@ -127,7 +127,6 @@ exports.updateUserByAdmin = async (req, res, next) => {
 }
 
 exports.register = async (req, res, next) => {
-    console.log(req.files)
 
     try {
 
@@ -168,7 +167,7 @@ exports.login = async (req, res, next) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-        return res.status(400).json({ error: 'Please enter email & password' })
+        return res.status(400).json({ message: 'Please enter email & password' })
     }
 
     const user = await User.findOne({ email }).select('+password'); // get user including password
@@ -199,7 +198,11 @@ exports.logout = async (req, res, next) => {
 }
 
 exports.profile = async (req, res, next) => {
-    return res.status(200).json(req.user);
+    return res.status(200).json({
+        success: true,
+        user: req.user,
+        message: 'Pogi mo diyan ah'
+    });
 }
 
 exports.update = async (req, res, next) => {
@@ -209,23 +212,23 @@ exports.update = async (req, res, next) => {
         email: req.body.email
     }
 
-    if (req.file) {
-        const user = await User.findById(req.user.id);
-        const res = await cloudinary.v2.uploader.destroy(user.profile_pic.public_id);
+    const user = await User.findById(req.user.id)
 
-        const result = await cloudinary.v2.uploader.upload(req.file.path, {
-            folder: 'profiles', // folder name in cloudinary, if not exist it will create automatically.
-            width: 200, // convert the width of image to 200 pixel
-            crop: "scale",
-        });
+    let images;
 
-        newUserData.profile_pic = {
-            public_id: result.public_id,
-            url: result.secure_url,
+    if (req.files.length > 0) {
+        let imagesUrl
+        if (user.images) {
+            imagesUrl = user.images.flatMap(image => image.public_id)
+            for (i in imagesUrl) {
+                await cloudinary.v2.uploader.destroy(imagesUrl[i]);
+            }
         }
+        images = await ImageCloudinary.uploadMultiple(req.files, 'movie-ticketing-system/movies');
+        newUserData.images = images
     }
 
-    const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
+    const updatedUser = await User.findByIdAndUpdate(req.user.id, newUserData, {
         new: true,
         runValidators: true
     })
@@ -236,7 +239,7 @@ exports.update = async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        user
+        user: updatedUser
     })
 
 }

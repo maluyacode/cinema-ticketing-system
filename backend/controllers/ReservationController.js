@@ -96,8 +96,10 @@ exports.getAllReservations = async (req, res, next) => {
             .populate('user')
             .populate({
                 path: 'show',
-                populate: { path: 'cinema' },
-                populate: { path: 'movie' }
+                populate: [
+                    { path: 'cinema', model: Cinema },
+                    { path: 'movie', model: Movie }
+                ]
             })
 
         if (!reservations) {
@@ -106,7 +108,7 @@ exports.getAllReservations = async (req, res, next) => {
                 message: 'Reservations not found',
             })
         }
-
+        console.log(reservations)
         return res.status(200).json({
             success: true,
             reservations
@@ -222,6 +224,42 @@ exports.updateReservation = async (req, res, next) => {
         return res.status(500).json({
             success: false,
             message: `Cannot find Reservation, don't try to enject`,
+        })
+    }
+
+}
+
+exports.getUserReservations = async (req, res, next) => {
+
+    try {
+        const reservations = await Reservation.find({ user: req.user.id })
+            .populate('user')
+            .populate({
+                path: 'show',
+                populate: [
+                    { path: 'cinema', model: Cinema },
+                    { path: 'movie', model: Movie }
+                ]
+            })
+        console.log(reservations)
+        if (!reservations) {
+            return res.status(404).json({
+                success: false,
+                message: 'Reservations not found',
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            reservations
+        })
+
+
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: `Cannot find reservations, don't try to enject`,
         })
     }
 

@@ -19,7 +19,7 @@ const Success = () => {
                         <Button component={Link} to='/' variant='outlined' size='large' color="success" sx={{ width: '150px' }}>Home</Button>
                     </Grid>
                     <Grid item>
-                        <Button component={Link} to='/' variant='outlined' size='large' color="success" sx={{ width: '150px' }}>Reservation</Button>
+                        <Button component={Link} to='/sarili' variant='outlined' size='large' color="success" sx={{ width: '150px' }}>Reservation</Button>
                     </Grid>
                 </Grid>
             </Paper>

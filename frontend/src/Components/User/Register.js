@@ -11,6 +11,7 @@ import { GoogleLogin } from '@react-oauth/google';
 
 const Register = () => {
 
+
     const [formInputs, setFormInputs] = useState({
         firstName: '',
         lastName: '',
@@ -42,19 +43,15 @@ const Register = () => {
         }
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const formData = new FormData();
-        formData.set('name', `${firstName} ${lastName}`);
-        formData.set('email', email);
-        formData.set('password', password);
-        formData.set('profile_pic', avatar);
+    const handleSubmit = (userData) => {
         setLoading(true)
-        register(formData);
+        register(userData);
     };
 
     const register = async (userData) => {
+        for (const pair of userData.entries()) {
+            console.log(`${pair[0]}, ${pair[1]}`);
+        }
         try {
             const config = {
                 headers: {
@@ -107,19 +104,18 @@ const Register = () => {
         <Container component="main" className='content'>
             <Paper
                 sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
+                    // display: "flex",
+                    // flexDirection: "column",
+                    // alignItems: "center",
                     p: 4,
-                    px: 10,
-                    width: '100%',
-                    maxWidth: '600px',
+                    // px: 10,
+                    // width: '100%',
+                    maxWidth: '500px',
                     margin: 'auto',
                     borderRadius: 5
                 }}
             >
-                <Avatar sx={{ m: 1, bgcolor: '#70a0a1' }} src={avatar} />
-                <Typography component="h1" variant="h5">
+                <Typography component="h1" variant="h5" textAlign={'center'}>
                     Create Account
                 </Typography>
                 <RegisterForm
@@ -128,7 +124,7 @@ const Register = () => {
                     loading={loading}
                 />
                 < br />
-                <GoogleLogin onSuccess={responseMessage} onError={errorMessage} size='meduim' logo_alignment='left' text='signup_with' />
+                <GoogleLogin onSuccess={responseMessage} onError={errorMessage} size='meduim' logo_alignment='left' buttonText='signup_with' />
             </Paper>
         </Container>
 

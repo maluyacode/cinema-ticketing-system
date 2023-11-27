@@ -10,7 +10,8 @@ import {
     OutlinedInput,
     FormControl,
     InputAdornment,
-    InputLabel
+    InputLabel,
+    Paper
 } from '@mui/material'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
@@ -52,9 +53,11 @@ const ResetPassword = () => {
     }
 
     return (
-        <Container maxWidth="sm" sx={{ height: "100%", pt: 20 }}>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{
-                mt: 3
+        <Container maxWidth="sm" className='content' sx={{pt: 20 }}>
+            <Paper component="form" noValidate onSubmit={handleSubmit} sx={{
+                mt: 3,
+                p: 10,
+                mb: 10
             }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12}>
@@ -108,7 +111,7 @@ const ResetPassword = () => {
                         <ButtonCircularProgress loading={buttonDisabled} text="Submit" />
                     </Grid>
                 </Grid>
-            </Box>
+            </Paper>
         </Container >
     );
 }

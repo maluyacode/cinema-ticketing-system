@@ -1,5 +1,5 @@
 import React, { useState, } from 'react'
-import { Box, Grid, TextField, Container, Typography } from '@mui/material'
+import { Box, Grid, TextField, Container, Typography, Paper } from '@mui/material'
 import ButtonCircularProgress from './Childs/ButtonCircularProgress';
 import axios from 'axios';
 import Toast from 'Components/Layout/Toast';
@@ -30,12 +30,14 @@ const ForgotPassword = () => {
     }
 
     return (
-        <Container maxWidth="sm" sx={{ height: "100%", pt: 20 }}>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{
-                mt: 3
+        <Container maxWidth="sm" className='content' sx={{ pt: 20 }}>
+            <Paper component="form" noValidate onSubmit={handleSubmit} sx={{
+                mt: 3,
+                p: 10,
+                mb: 19
             }}>
                 <Grid container>
-                    <Grid item xs={12} sm={12}>
+                    <Grid item xs={12} sm={12} mb={2}>
                         <Typography variant='h6' >Enter your email</Typography>
                     </Grid>
                     <Grid item xs={12} sm={12}>
@@ -54,7 +56,7 @@ const ForgotPassword = () => {
                         <ButtonCircularProgress loading={loading} text="Send" />
                     </Grid>
                 </Grid>
-            </Box>
+            </Paper>
         </Container >
     );
 }

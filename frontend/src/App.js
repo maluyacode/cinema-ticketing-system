@@ -26,8 +26,10 @@ import UsersList from 'Components/Admin/User/UsersList';
 import UserCreate from 'Components/Admin/User/UserCreate';
 import UserUpdate from 'Components/Admin/User/UserUpdate';
 import ProtectedRoute from 'utils/ProtectedRoute';
-import ReservationsList from 'Components/Admin/Order/ReservationsList';
-import ReservationUpdate from 'Components/Admin/Order/ReservationUpdate';
+import ReservationsList from 'Components/Admin/Reservation/ReservationsList';
+import ReservationUpdate from 'Components/Admin/Reservation/ReservationUpdate';
+import Profile from 'Components/User/Profile';
+import MyReservations from 'Components/User/MyReservations';
 
 const hideHeader = window.location.pathname.startsWith('/admin');
 
@@ -42,6 +44,8 @@ function App() {
           <Route path='/register' element={<Register />} caseSensitive={true} />
           <Route path='/forgot/password' element={<ForgotPassword />} caseSensitive={true} />
           <Route path='/password/reset/:token' element={<ResetPassword />} exact="true" />
+          <Route path='/sarili' element={<Profile />} exact="true" />
+          <Route path='/reservations-ticket-seats' element={<MyReservations />} exact="true" />
 
           <Route path='/movies' element={<MovieListing />} exact="true" />
           <Route path='/movie/shows/:id' element={<MovieShows />} exact="true" />

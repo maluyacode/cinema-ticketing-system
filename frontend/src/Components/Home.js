@@ -57,7 +57,7 @@ const Home = () => {
             <Container maxWidth='100vw' className='content' disableGutters={true}
                 sx={{
                     backgroundImage: `url('./images/cinema-bg.jpg')`,
-                    height: '100%',
+                    // height: '100%',
                     objectFit: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
@@ -70,9 +70,9 @@ const Home = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     flexDirection: 'column',
-                    paddingBottom: 30
+                    paddingBottom: 17
                 }}>
-                <Grid width='80%'>
+                <Grid width='80%' mt={10}>
                     <Grid item xs={12} width='100%'>
                         <MovieCard movie={movie} width='100%' />
                     </Grid >

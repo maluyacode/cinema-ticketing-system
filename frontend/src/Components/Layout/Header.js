@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { logout, getUser } from 'utils/helpers';
-import { useNavigate, Link as LinkRouter } from 'react-router-dom';
+import { useNavigate, Link as LinkRouter, Link } from 'react-router-dom';
 import Toast from './Toast';
 import axios from 'axios';
 import { googleLogout } from '@react-oauth/google';
@@ -77,7 +77,7 @@ function ResponsiveAppBar() {
     return (
         <ThemeProvider theme={darkTheme}>
             <AppBar
-                // position="fixed"
+            // position="fixed"
             >
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -109,6 +109,9 @@ function ResponsiveAppBar() {
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}
                             >
+                                <MenuItem component={Link} to='/sarili'>
+                                    <Typography textAlign="center">Profile</Typography>
+                                </MenuItem>
                                 <MenuItem onClick={logoutHandler}>
                                     <Typography textAlign="center">Logout</Typography>
                                 </MenuItem>
