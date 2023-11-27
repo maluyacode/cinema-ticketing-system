@@ -5,7 +5,6 @@ const Movie = require('../models/Movie')
 const sendEmail = require('../utils/sendEmail');
 const pdfGenerate = require('../utils/pdfGenerate')
 const qrGenerate = require('../utils/qrGenerate');
-const hbs = require('nodemailer-express-handlebars')
 const path = require('path')
 const sendToAdmin = require('../utils/sendToAdmin');
 const Cinema = require('../models/Cinema');
