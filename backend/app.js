@@ -3,7 +3,6 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const bodyParser = require('body-parser')
-const exphbs = require('express-handlebars');
 
 const user = require('./routes/user');
 const movie = require('./routes/movie');
@@ -11,11 +10,6 @@ const cinema = require('./routes/cinema');
 const show = require('./routes/show');
 const reservation = require('./routes/reservation');
 const charts = require('./routes/charts');
-
-const hbs = exphbs.create();
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
 
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
