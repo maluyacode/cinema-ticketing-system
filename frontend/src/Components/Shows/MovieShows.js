@@ -118,7 +118,7 @@ const MovieShows = () => {
 
     return (
         <Container className='content'>
-            <Typography variant='h4' textTransform={'uppercase'} fontWeight={600} px={15} mb={3}>Movie Schedules</Typography>
+            <Typography variant='h4' textTransform={'uppercase'} fontWeight={600} mb={3} ml='5%'>Movie Schedules</Typography>
             <Box className='date-picker-container' component='div' width='100%' display='flex' justifyContent={'center'}>
                 <Datepicker
                     onChange={handleChange}
@@ -127,8 +127,8 @@ const MovieShows = () => {
                 />
             </Box>
             <Grid container className='movie-shows'>
-                <Typography variant='h4' textTransform={'uppercase'} fontWeight={500} px={20} mb={3} mt={3}>{movie.title}</Typography>
-                <TableContainer component={Paper} sx={{ mx: 20 }}>
+                <Typography variant='h4' textTransform={'uppercase'} fontWeight={500} my={3} ml='5%'>{movie.title}</Typography>
+                <TableContainer component={Paper} sx={{ mx: '5%' }}>
                     <Table sx={{ minWidth: 700 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
@@ -153,6 +153,7 @@ const MovieShows = () => {
                                             {schedule.shows && schedule.shows.map((sched, i) => {
                                                 return (<>
                                                     <Button variant='outlined'
+                                                        sx={{ fontSize: 15 }}
                                                         onClick={() => handleChooseTime(sched.show_details._id)}
                                                     >
                                                         {new Date(sched.show_details.start_time).toLocaleTimeString('en-PH', { hour: '2-digit', minute: '2-digit' })}
@@ -166,48 +167,6 @@ const MovieShows = () => {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                {/* <Grid container item={true} gap={2} columns={13} justifyContent="center">
-                    {shows && shows.map(show => {
-                        return <Grid item lg={4} xs={12} md={6} key={show._id}>
-                            <Paper
-                                sx={{
-                                    p: 2,
-                                    margin: 'auto',
-                                    maxWidth: 500,
-                                    flexGrow: 1,
-                                    backgroundColor: (theme) =>
-                                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-                                }}
-                            >
-                                <Grid container spacing={2}>
-                                    <Grid item={true} container justifyContent='space-between'>
-                                        <Grid sm={12} lg={8} item container direction="column" spacing={2}>
-                                            <Grid item xs>
-                                                <Typography gutterBottom variant="h6" component="div">
-                                                    {new Date(show.start_time).toLocaleTimeString()} {new Date(show.start_time).toDateString()}
-                                                </Typography>
-                                                <Typography variant="h6" gutterBottom>
-                                                    {show.cinema.name} • {show.cinema.location}
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary">
-                                                    Avalable Seats: {show.available_tickets}
-                                                </Typography>
-                                            </Grid>
-                                        </Grid>
-                                        <Grid container item={true} xs={12} sm={12} lg={4} display='flex' direction='column' alignItems='end' justifyContent='space-between' >
-                                            <Typography variant="subtitle1" component="div" align='right'>
-                                                Ticket Price: ₱{show.ticket_price}
-                                            </Typography>
-                                            <Button variant="outlined" size="small" mt={4} component={Link} to={`/reservation/${show._id}`}>
-                                                Select Seat
-                                            </Button>
-                                        </Grid>
-                                    </Grid>
-                                </Grid>
-                            </Paper>
-                        </Grid>
-                    })}
-                </Grid> */}
                 <Grid container item={true} lg={6} ></Grid>
             </Grid>
         </Container >

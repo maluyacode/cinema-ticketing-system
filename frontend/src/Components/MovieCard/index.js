@@ -13,10 +13,11 @@ const index = ({ movie }) => {
         <>
             <div className="movie_card" id="bright"
                 style={{
-                    backgroundImage: `url(${movie.images ? movie.images[0].url : ''})`,
+                    backgroundImage: `url(${movie.images ? movie.images[1].url : ''})`,
                     backgroundRepeat: 'no-repeat',
-                    backgroundSize: '100% 100%',
-                    objectFit: 'cover',
+                    // backgroundSize: '100% 100%',
+                    objectFit: 'contain',
+                    backgroundPosition: 'right',
                     width: '100%',
                 }}
             >
@@ -35,10 +36,10 @@ const index = ({ movie }) => {
                             {movie.description}
                         </p>
                         <Box component='div' mt={2} style={{ display: 'flex' }}>
-                            <Button to={`/movie/shows/${movie._id}`} component={Link} variant="outlined" size="medium" sx={{ mr: '5px' }}>
+                            <Button to={`/movie/shows/${movie._id}`} component={Link} variant="outlined" size="small" sx={{ mr: '5px' }}>
                                 Buy Tickets
                             </Button>
-                            <Button variant="outlined" size="medium">
+                            <Button variant="outlined" size="small">
                                 View Details
                             </Button>
                         </Box>

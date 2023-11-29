@@ -13,7 +13,7 @@ body {
 }
 
 .App {
-  /* height: 100vh; */
+  height: fit-content;
   background-color: #FAF1E4 !important;
 }
 

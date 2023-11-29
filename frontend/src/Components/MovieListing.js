@@ -78,7 +78,7 @@ export default function MovieListing() {
     };
 
     return (
-        <Container component="main" className='content' >
+        <Container component="main" className='content'>
             <div>
                 <Typography variant="h4" textAlign='center' fontWeight={800}>Movies</Typography>
                 <hr />
@@ -86,14 +86,14 @@ export default function MovieListing() {
                     dataLength={movies.length}
                     next={fetchMoreData}
                     hasMore={movies.length < limitLength}
-                    loader={<Grid container gap={2} columns={13} display='flex' justifyContent='center'>
-                        <Grid item xl={4} md={6} sm={6} xs={12} justifyContent='center' className="movie-card-list">
+                    loader={<Grid container gap={4} columns={13} mt={2} display='flex' justifyContent='center'>
+                        <Grid item xl={4} md={6} sm={6} xs={13} justifyContent='center' className="movie-card-list">
                             <Skeleton variant="rectangular" height={450} />
                         </Grid>
-                        <Grid item xl={4} md={6} sm={6} xs={12} justifyContent='center' className="movie-card-list">
+                        <Grid item xl={4} md={6} sm={6} xs={13} justifyContent='center' className="movie-card-list">
                             <Skeleton variant="rectangular" height={450} />
                         </Grid>
-                        <Grid item xl={4} md={6} sm={6} xs={12} justifyContent='center' className="movie-card-list">
+                        <Grid item xl={4} md={6} sm={6} xs={13} justifyContent='center' className="movie-card-list">
                             <Skeleton variant="rectangular" height={450} />
                         </Grid>
                     </Grid>}

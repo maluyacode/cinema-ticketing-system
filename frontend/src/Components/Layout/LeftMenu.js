@@ -76,7 +76,7 @@ export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseN
                             md: 'none'
                         }
                     }}>
-                    <MenuItem key={'Movies'} onClick={handleCloseNavMenu}>
+                    <MenuItem component={Link} to='/movies' key={'Movies'} onClick={handleCloseNavMenu}>
                         <Typography textAlign="center">Movies</Typography>
                     </MenuItem>
                 </Menu>
