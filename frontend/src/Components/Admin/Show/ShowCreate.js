@@ -86,7 +86,6 @@ const ShowCreate = () => {
         }
     }
 
-
     const validateSchema = Yup.object().shape({
         ticket_price: Yup.number().typeError("This field must be a number").required(requiredText),
         movie: Yup.string().required(requiredText),
@@ -264,7 +263,7 @@ const ShowCreate = () => {
         })
         setCinemas(selectedItems);
     }
-
+    console.log(formik)
     const fileOnChange = e => {
         const files = Array.from(e.target.files)
         setImagesPreview([]);
