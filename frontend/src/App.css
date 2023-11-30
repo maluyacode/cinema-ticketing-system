@@ -105,3 +105,19 @@ main.MuiBox-root {
   content: none !important;
   /* or content: ''; */
 }
+
+/* Your CSS file or inline styles */
+/* Adjust the seatButton class based on screen size */
+.seatButton {
+  width: 40px;
+  /* Default width */
+}
+
+/* For smaller screens */
+@media screen and (max-width: 600px) {
+  .seatButton {
+    width: 30px;
+    /* Adjust width for smaller screens */
+    /* Other adjustments as needed */
+  }
+}

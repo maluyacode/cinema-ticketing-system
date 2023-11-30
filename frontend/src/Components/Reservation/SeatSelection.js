@@ -62,9 +62,23 @@ const SeatSelection = ({ setSelectedSeats, setPay, show, selectedSeats, numOfTic
                     </div>
                 </div>
             </Grid>
-            <Grid item width='100%'>
-                <Box component='div' pb={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-                    <div style={{ height: '20px', width: '600px', backgroundColor: '#45474B', marginBottom: '20px', marginTop: '10px', textAlign: 'center', color: 'white' }}>Screen</div>
+            <Grid item xs={12} sx={{ overflowX: 'auto' }}>
+                <Box
+                    pb={3}
+                    px={2} // Adjust padding
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        transform: 'scale(0.8)',
+                        maxWidth: '100%',
+                        overflowX: 'auto',
+                        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+                        borderRadius: '8px',
+                        justifyContent: 'center', // Center items
+                    }}
+                >
+                    <div style={{ height: '20px', backgroundColor: '#45474B', marginBottom: '20px', marginTop: '10px', textAlign: 'center', color: 'white', width: '100%' }}>Screen</div>
                     {show.cinema && show.cinema.seat_layout.map((seat) => {
                         let row = [];
                         for (let i = 0; i < seat.column; i++) {
@@ -77,25 +91,27 @@ const SeatSelection = ({ setSelectedSeats, setPay, show, selectedSeats, numOfTic
                                 bgColor = 'lightgreen'
                                 isDisabled = false
                             }
-                            row.push(<Button
-                                key={seat.row + i}
-                                style={{
-                                    backgroundColor: bgColor,
-                                    margin: "8px",
-                                    color: "black",
-                                    fontSize: 10,
-                                    width: '50px'
-                                }}
-                                disabled={isDisabled}
-                                size='small'
-                                onClick={handleClickSeats}
-                                data-seat={`${seat.row}${i}`}
-                            >
-                                {`${seat.row}${i}`}
-                            </Button>
+                            row.push(
+                                <Button
+                                    key={seat.row + i}
+                                    className="seatButton" // Add a class name for styling
+                                    style={{
+                                        backgroundColor: bgColor,
+                                        margin: "4px", // Adjust margin
+                                        color: "black",
+                                        fontSize: 10,
+                                        flexShrink: 0,
+                                    }}
+                                    disabled={isDisabled}
+                                    size='small'
+                                    onClick={handleClickSeats}
+                                    data-seat={`${seat.row}${i}`}
+                                >
+                                    {`${seat.row}${i}`}
+                                </Button>
                             )
                         }
-                        return <div style={{ display: 'flex', flexWrap: 'nowrap' }} key={seat.row} >{row}</div>
+                        return <div style={{ display: 'flex', justifyContent: 'center' }} key={seat.row}>{row}</div>
                     })}
                 </Box>
             </Grid>
