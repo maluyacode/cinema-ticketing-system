@@ -19,7 +19,6 @@ import {
 export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseNavMenu }) {
     return (
         <>
-            {/* <LocalMoviesIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
             <Typography
                 variant="h6"
                 noWrap
@@ -90,14 +89,6 @@ export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseN
                     </MenuItem>
                 </Menu>
             </Box >
-            {/* <LocalMoviesIcon
-                sx={{
-                    display: {
-                        xs: 'flex',
-                        md: 'none'
-                    },
-                    mr: 1
-                }} /> */}
             <Typography
                 variant="h5"
                 noWrap
@@ -114,7 +105,14 @@ export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseN
                     fontWeight: 700,
                     letterSpacing: '.1rem',
                     color: 'inherit',
-                    textDecoration: 'none'
+                    textDecoration: 'none',
+                    fontSize: {
+                        xl: '16px',
+                        lg: '10px',
+                        md: '5px',
+                        sm: '1.1rem',
+                        xs: '1.1rem'
+                    }
                 }}>
                 CinemaTick
             </Typography>

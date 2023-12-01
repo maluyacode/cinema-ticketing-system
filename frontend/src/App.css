@@ -10,6 +10,7 @@ body {
   margin: 0;
   font-family: Montserrat !important;
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 .App {
@@ -121,7 +122,7 @@ main.MuiBox-root {
 }
 
 .gradient {
-  background: linear-gradient(320deg, #fafafa 50%, #2a4d4e 50%, #dddde9 50%) !important;
+  background: linear-gradient(310deg, #fafafa 50%, #2a4d4e 50%, #dddde9 50%) !important;
   /* background: radial-gradient(circle farthest-side at right center, #ffffff 33%, #d0d0dc 51%) !important; */
 }
 

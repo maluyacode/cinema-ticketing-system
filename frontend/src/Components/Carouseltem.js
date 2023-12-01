@@ -1,14 +1,31 @@
 import { DateRangeSharp, Image, Movie, WatchLater } from '@mui/icons-material'
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Box, Button, Grid, Typography, useTheme } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Carouseltem = ({ movie }) => {
+
+    const theme = useTheme()
+
+    const hour = movie &&
+        `${Number.parseInt(movie.duration / 60)}h`
+    const mins = movie &&
+        Number.parseFloat(movie.duration % 60) !== 0 ?
+        `${Number.parseFloat(movie.duration % 60)}min` :
+        ''
+
+    const releaseDate = new Date(movie.release_date).toLocaleDateString('en-PH', { month: 'long', day: '2-digit', year: 'numeric' })
+    const duration = `${hour} ${mins}`;
+
     return (
         <>
             <Grid container
+                height={{
+                    lg: '100vh',
+                    xl: '100vh',
+                    md: '100vh',
+                }}
                 sx={{
-                    height: '100vh',
                     width: '100%'
                 }}
             >
@@ -30,10 +47,10 @@ const Carouseltem = ({ movie }) => {
                                 <Movie /> <Typography>{movie.genre}</Typography>
                             </Box>
                             <Box display={'flex'} gap={1}>
-                                <WatchLater /> <Typography>{movie.duration} mins</Typography>
+                                <WatchLater /> <Typography>{duration}</Typography>
                             </Box>
                             <Box display={'flex'} gap={1}>
-                                <DateRangeSharp /> <Typography>{new Date(movie.release_date).toLocaleDateString('en-PH', { month: 'long', day: '2-digit', year: 'numeric' })}</Typography>
+                                <DateRangeSharp /> <Typography>{releaseDate}</Typography>
                             </Box>
                         </Grid>
 
@@ -45,7 +62,6 @@ const Carouseltem = ({ movie }) => {
                                 <Button variant={'contained'} to={`/movie/shows/${movie._id}`} component={Link}>Buy Tickets</Button>
                             </Box>
                         </Grid>
-
                     </Grid>
 
                     <Grid item xl={4} md={4} lg={4} sm={12} xs={12} alignItems={'center'} justifyContent={'center'} display={'flex'} flexWrap={'wrap'}
@@ -70,23 +86,21 @@ const Carouseltem = ({ movie }) => {
                                 sm: '400px',
                                 xs: '300px',
                             }}
-
+                            height={{
+                                xl: '500px',
+                                lg: '500px',
+                                md: '500px',
+                                sm: '400px',
+                                xs: '400px'
+                            }}
+                            sx={{
+                                objectFit: 'cover',
+                                objectPosition: 'center',
+                            }}
                             src={movie && movie.images[0].url} />
                     </Grid>
                 </Grid>
             </Grid>
-            {/* <img src='https://res.cloudinary.com/dzyv6cl5r/image/upload/v1701249286/movie-ticketing-system/movies/ochoa9cch2wxfjenkmwh.jpg'
-                style={{
-                    position: 'absolute',
-                    right: 0,
-                    bottom: 0,
-                    height: '100vh',
-                    width: '50vw',
-                    zIndex: 1,
-                    backgroundColor: 'red',
-                    backgroundBlendMode: 'overlay'
-                }}
-            /> */}
         </>
     )
 }
