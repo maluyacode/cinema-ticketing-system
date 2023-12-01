@@ -20,6 +20,7 @@ import {
 import MovieCard from './MovieCard/index'
 import axios from 'axios';
 import Carouseltem from './Carouseltem';
+import MetaData from './Layout/MetaData';
 
 
 function Item(props) {
@@ -72,14 +73,17 @@ const Home = () => {
 
 
     return (
-        <Container maxWidth={'100%'} disableGutters className='gradient'>
-            <Carousel autoPlay swipe stopAutoPlayOnHover >
-                {
-                    movie && movie.map((item, i) => <Carouseltem key={i} movie={item} />)
-                }
-            </Carousel>
-            {/* <Carouseltem /> */}
-        </Container>
+        <>
+            <MetaData pageTitle={'Home'}></MetaData>
+
+            <Container maxWidth={'100%'} disableGutters className='gradient'>
+                <Carousel autoPlay swipe stopAutoPlayOnHover >
+                    {
+                        movie && movie.map((item, i) => <Carouseltem key={i} movie={item} />)
+                    }
+                </Carousel>
+            </Container>
+        </>
     )
 }
 
