@@ -42,10 +42,11 @@ function ResponsiveAppBar() {
 
     const darkTheme = createTheme({
         palette: {
-            mode: 'light',
+            mode: 'dark',
             primary: {
-                main: '#2a4d4e',
+                main: '#dddde9',
             },
+
         },
     });
 

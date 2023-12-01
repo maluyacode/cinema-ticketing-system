@@ -8,7 +8,7 @@ const index = ({ movie }) => {
 
     const f = new Intl.ListFormat("en-us");
     // console.log(movie.images[0])
-
+    console.log(movie && movie.title)
     return (
         <>
             <div className="movie_card" id="bright"

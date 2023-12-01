@@ -173,7 +173,9 @@ exports.movieWithFutureShows = async (req, res, next) => {
                 'shows.start_time': { $gte: new Date(Date.now()) }
             }
         }
-    ]).skip(Number.parseInt(movieIndex)).limit(1);
+    ])
+    // .skip(Number.parseInt(movieIndex))
+    // .limit(1);
 
     const moviesCount = await Movie.aggregate([
         {

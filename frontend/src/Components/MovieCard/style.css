@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
 
-.movie_card {
+/* .movie_card {
     position: relative;
     display: block;
     width: 800px;
@@ -11,7 +11,7 @@
     overflow: hidden;
     border-radius: 10px 10px 0 0;
     transition: all 0.4s;
-}
+} */
 
 /* .movie_card:hover {
     transform: scale(1.02);

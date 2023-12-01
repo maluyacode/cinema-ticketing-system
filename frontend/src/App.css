@@ -14,14 +14,12 @@ body {
 
 .App {
   height: fit-content;
-  background-color: #FAF1E4 !important;
 }
 
 .content {
   padding-top: 100.500px;
   padding-bottom: 68.500px;
 }
-
 
 #imageContainer {
   white-space: nowrap;
@@ -120,4 +118,14 @@ main.MuiBox-root {
     /* Adjust width for smaller screens */
     /* Other adjustments as needed */
   }
+}
+
+.gradient {
+  background: linear-gradient(320deg, #fafafa 50%, #2a4d4e 50%, #dddde9 50%) !important;
+  /* background: radial-gradient(circle farthest-side at right center, #ffffff 33%, #d0d0dc 51%) !important; */
+}
+
+.border-radius {
+  /* border-bottom-left-radius: 50%; */
+  /* border-top-left-radius: 50%; */
 }

@@ -19,7 +19,7 @@ import {
 export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseNavMenu }) {
     return (
         <>
-            <LocalMoviesIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+            {/* <LocalMoviesIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
             <Typography
                 variant="h6"
                 noWrap
@@ -33,11 +33,11 @@ export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseN
                     },
                     fontFamily: 'monospace',
                     fontWeight: 700,
-                    letterSpacing: '.3rem',
+                    letterSpacing: '.1rem',
                     color: 'inherit',
                     textDecoration: 'none'
                 }}>
-                CINEMATICK
+                CinemaTick
             </Typography>
             <Box sx={{
                 flexGrow: 1,
@@ -76,19 +76,28 @@ export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseN
                             md: 'none'
                         }
                     }}>
+                    <MenuItem component={Link} to='/' key={'Home-small'} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">Home</Typography>
+                    </MenuItem>
                     <MenuItem component={Link} to='/movies' key={'Movies'} onClick={handleCloseNavMenu}>
                         <Typography textAlign="center">Movies</Typography>
                     </MenuItem>
+                    <MenuItem component={Link} to='/schedules' key={'Schedules'} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">Schedules</Typography>
+                    </MenuItem>
+                    <MenuItem component={Link} to='/cinemas' key={'Cinemas'} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">Cinemas</Typography>
+                    </MenuItem>
                 </Menu>
             </Box >
-            <LocalMoviesIcon
+            {/* <LocalMoviesIcon
                 sx={{
                     display: {
                         xs: 'flex',
                         md: 'none'
                     },
                     mr: 1
-                }} />
+                }} /> */}
             <Typography
                 variant="h5"
                 noWrap
@@ -103,11 +112,11 @@ export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseN
                     flexGrow: 1,
                     fontFamily: 'monospace',
                     fontWeight: 700,
-                    letterSpacing: '.3rem',
+                    letterSpacing: '.1rem',
                     color: 'inherit',
                     textDecoration: 'none'
                 }}>
-                CINEMATICK
+                CinemaTick
             </Typography>
             <Box
                 sx={{
@@ -119,15 +128,55 @@ export function LeftMenu({ handleOpenNavMenu, anchorElNav, Boolean, handleCloseN
                 }}>
                 <Button
                     component={Link}
+                    to='/'
+                    key={'Home'}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                        my: 2,
+                        color: 'white',
+                        display: 'block',
+                        textTransform: 'capitalize'
+                    }}>
+                    Home
+                </Button>
+                <Button
+                    component={Link}
                     to='/movies'
                     key={'Movies'}
                     onClick={handleCloseNavMenu}
                     sx={{
                         my: 2,
                         color: 'white',
-                        display: 'block'
+                        display: 'block',
+                        textTransform: 'capitalize'
                     }}>
                     Movies
+                </Button>
+                <Button
+                    component={Link}
+                    to='/schedules'
+                    key={'Schedules'}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                        my: 2,
+                        color: 'white',
+                        display: 'block',
+                        textTransform: 'capitalize'
+                    }}>
+                    Schedules
+                </Button>
+                <Button
+                    component={Link}
+                    to='/cinemas'
+                    key={'Cinemas'}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                        my: 2,
+                        color: 'white',
+                        display: 'block',
+                        textTransform: 'capitalize'
+                    }}>
+                    Cinemas
                 </Button>
             </Box>
         </>
