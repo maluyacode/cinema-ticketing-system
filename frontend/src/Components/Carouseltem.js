@@ -38,7 +38,7 @@ const Carouseltem = ({ movie }) => {
                         xs: '30%'
                     }}>
 
-                        <Typography variant='h3' letterSpacing={0.1}>{movie.title}</Typography>
+                        <Typography variant='h3' letterSpacing={0.1} fontWeight={700}>{movie.title}</Typography>
 
                         <Typography variant='p'>{movie.description}</Typography>
 

@@ -21,6 +21,7 @@ import MovieCard from './MovieCard/index'
 import axios from 'axios';
 import Carouseltem from './Carouseltem';
 import MetaData from './Layout/MetaData';
+import NowShowing from './NowShowing';
 
 
 function Item(props) {
@@ -42,24 +43,12 @@ const Home = () => {
     const [movieIndex, setMovieIndex] = useState(0);
     const [moviesCount, setMoviesCount] = useState(0);
 
-    const theme = useTheme();
-
-    const handleNext = () => {
-        setMovieIndex((prevMovieIndex) => prevMovieIndex + 1);
-    };
-
-    const handleBack = () => {
-        setMovieIndex((prevMovieIndex) => prevMovieIndex - 1);
-    };
-
-
     const getMovie = async (movieIndex) => {
 
         try {
             const { data: { movie } } = await axios.get(
                 `${process.env.REACT_APP_API}/api/v1/movie/with-future-show`
             )
-            console.log(movie)
             setMovie(movie);
             // setMoviesCount(response.data.moviesCount);
         } catch (error) {
@@ -82,6 +71,7 @@ const Home = () => {
                         movie && movie.map((item, i) => <Carouseltem key={i} movie={item} />)
                     }
                 </Carousel>
+                <NowShowing />
             </Container>
         </>
     )
