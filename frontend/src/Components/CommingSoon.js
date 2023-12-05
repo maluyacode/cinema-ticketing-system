@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import { moviesNowShowing } from '../services/movies';
-import { Card, CardMedia, Container, Grid, Typography, Button, CardContent } from '@mui/material';
+import { commingSoon } from 'services/movies';
+import {
+    Typography,
+    Grid,
+    CardMedia,
+    CardContent,
+    Container,
+    Card
+} from '@mui/material';
 import { cutSentence } from 'utils/cutSentence';
 
-const NowShowing = () => {
+const CommingSoon = () => {
 
     const [movies, setMovies] = useState([]);
 
-    const getMovies = async () => { setMovies(await moviesNowShowing()) }
+    const getCommingSoon = async () => { setMovies(await commingSoon()) }
 
     useEffect(() => {
-        getMovies()
+        getCommingSoon()
     }, [])
-
     return (
         <Container maxWidth='lg' sx={{
             mt: 5, pb: 5,
         }}>
             <Typography variant='h4' textAlign={'center'} width={'100%'} mb={2} fontWeight={600} letterSpacing={-1}>
-                Now Showing
+                Comming Soon
             </Typography>
             <Grid container rowGap={3} columnGap={3} columns={12} display={'flex'} flexWrap={'nowrap'} pb={2}
                 sx={{
@@ -60,4 +66,4 @@ const NowShowing = () => {
     )
 }
 
-export default NowShowing
+export default CommingSoon

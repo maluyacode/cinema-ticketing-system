@@ -1,6 +1,7 @@
 const Movie = require('../models/Movie');
 const cloudinary = require('cloudinary');
 const ImageCloudinary = require('../utils/ImageCloudinary');
+const Show = require('../models/Show');
 
 exports.listAllMovies = async (req, res, next) => {
 
@@ -201,4 +202,44 @@ exports.movieWithFutureShows = async (req, res, next) => {
     })
 }
 
+exports.commingSoon = async (req, res, next) => {
 
+    try {
+
+        const movies = await Movie.aggregate([
+            {
+                $lookup: {
+                    from: 'shows',
+                    localField: '_id',
+                    foreignField: 'movie',
+                    as: 'shows'
+                }
+            },
+            {
+                $match: {
+                    'shows': { $eq: [] }
+                }
+            }
+        ])
+
+        if (!(movies || movies?.length)) {
+            return res.status(200).json({
+                success: true,
+                message: 'No available movies'
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            movies
+        })
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            success: false,
+            err,
+        })
+    }
+
+}

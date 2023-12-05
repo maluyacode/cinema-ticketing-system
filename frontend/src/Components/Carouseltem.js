@@ -2,6 +2,7 @@ import { DateRangeSharp, Image, Movie, WatchLater } from '@mui/icons-material'
 import { Box, Button, Grid, Typography, useTheme } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { cutSentence } from 'utils/cutSentence'
 
 const Carouseltem = ({ movie }) => {
 
@@ -40,7 +41,7 @@ const Carouseltem = ({ movie }) => {
 
                         <Typography variant='h3' letterSpacing={0.1} fontWeight={700}>{movie.title}</Typography>
 
-                        <Typography variant='p'>{movie.description}</Typography>
+                        <Typography variant='p'>{cutSentence(movie.description, 15)}</Typography>
 
                         <Grid item container columnGap={3} rowGap={1}>
                             <Box display={'flex'} gap={1}>
